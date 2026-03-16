@@ -1,508 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-    <configuration>   
-        <system.webServer>   
-           <rewrite>          
-               <rules>             
-                   <rule name="RewriteHTML">
-                     <match url="(.*)" />
-                       <conditions logicalGrouping="MatchAll">                     
-                       <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />                     
-                       <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />                 
-                       </conditions>                 <action type="Rewrite" url="{R:1}.html" />             
-                   </rule>                
-               </rules>      
-           </rewrite>   
-        </system.webServer>  
-       </configuration>       
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gokul Raghu</title>
-    <link rel="icon" href="https://res.cloudinary.com/gokulskills/image/upload/v1606053946/Gokulskills/favicon_knkyea.jpg" type="image/x-icon">
-	<link rel="shortcut icon" href="https://res.cloudinary.com/gokulskills/image/upload/v1606053946/Gokulskills/favicon_knkyea.jpg">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://res.cloudinary.com/gokulskills/image/upload/v1606053946/Gokulskills/favicon_knkyea.jpg">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://res.cloudinary.com/gokulskills/image/upload/v1606053946/Gokulskills/favicon_knkyea.jpg">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://res.cloudinary.com/gokulskills/image/upload/v1606053946/Gokulskills/favicon_knkyea.jpg">
-  <link rel="apple-touch-icon-precomposed" href="https://res.cloudinary.com/gokulskills/image/upload/v1606053946/Gokulskills/favicon_knkyea.jpg">
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/aos.css" rel="stylesheet">
-    <!-- main style -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      RewriteRule ^(.*)\.html$ /$1 [L,R=301]
-
-    <![endif]-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gokul Raghu | Backend Platform Engineer</title>
 </head>
+<body style="margin:0; font-family:Inter, Arial, Helvetica, sans-serif; background:#070b14; color:#e5eefc;">
 
-<body>
+  <!-- Background -->
+  <div style="position:fixed; inset:0; overflow:hidden; z-index:-1; background:
+    radial-gradient(circle at 10% 10%, rgba(59,130,246,0.18), transparent 28%),
+    radial-gradient(circle at 90% 12%, rgba(139,92,246,0.16), transparent 24%),
+    radial-gradient(circle at 50% 55%, rgba(16,185,129,0.09), transparent 28%),
+    linear-gradient(180deg, #08101d 0%, #070b14 48%, #05070f 100%);">
+  </div>
 
-    <!-- Preloader -->
-    <div id="preloader">
-        <div id="status">
-
-            <div class="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar">
-            </div>
-
+  <!-- Sticky navbar -->
+  <div style="position:sticky; top:0; z-index:999; backdrop-filter:blur(18px); background:rgba(7,11,20,0.78); border-bottom:1px solid rgba(255,255,255,0.06);">
+    <div style="max-width:1220px; margin:0 auto; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
+      <div style="display:flex; align-items:center; gap:12px; min-width:0;">
+        <div style="width:40px; height:40px; min-width:40px; border-radius:14px; background:linear-gradient(135deg, #3b82f6, #8b5cf6, #10b981); box-shadow:0 10px 24px rgba(59,130,246,0.28);"></div>
+        <div style="min-width:0;">
+          <div style="font-size:17px; font-weight:700; color:#ffffff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Gokul Raghu</div>
+          <div style="font-size:12px; color:#94a3b8;">Backend • Platform • Distributed Systems</div>
         </div>
+      </div>
+      <div style="display:flex; gap:10px 14px; flex-wrap:wrap;">
+        <a href="#about" style="color:#cbd5e1; text-decoration:none; font-size:14px;">About</a>
+        <a href="#highlights" style="color:#cbd5e1; text-decoration:none; font-size:14px;">Highlights</a>
+        <a href="#skills" style="color:#cbd5e1; text-decoration:none; font-size:14px;">Skills</a>
+        <a href="#projects" style="color:#cbd5e1; text-decoration:none; font-size:14px;">Projects</a>
+        <a href="#experience" style="color:#cbd5e1; text-decoration:none; font-size:14px;">Experience</a>
+        <a href="#contact" style="color:#cbd5e1; text-decoration:none; font-size:14px;">Contact</a>
+      </div>
     </div>
-    <!-- ./Preloader -->
-    
-    <!-- header -->
-    <header class="navbar-fixed-top">
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">experience</a></li>
-                <li><a href="#project">projects</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- ./header -->
-    
-    <!-- home -->
-    <div class="section" id="home" data-stellar-background-ratio="0.5">
-        <div class="container">
-            <div class="disply-table">
-                <div class="table-cell" data-aos="fade-up" data-aos-delay="0">
-                    <h4>Gokul Raghu</h4>
-                    <h1>Software Developer<br /> Social Activist</h1> </div>
-            </div>
+  </div>
+
+  <div style="max-width:1220px; margin:0 auto; padding:22px 16px 56px 16px;">
+
+    <!-- Hero -->
+    <section style="position:relative; overflow:hidden; border-radius:28px; border:1px solid rgba(255,255,255,0.08); background:
+      linear-gradient(135deg, rgba(17,24,39,0.88), rgba(10,14,24,0.96)),
+      linear-gradient(135deg, rgba(59,130,246,0.12), rgba(139,92,246,0.08), rgba(16,185,129,0.08)); box-shadow:0 30px 90px rgba(0,0,0,0.42);">
+      <div style="position:absolute; top:-80px; right:-60px; width:280px; height:280px; border-radius:999px; background:radial-gradient(circle, rgba(59,130,246,0.25), rgba(59,130,246,0));"></div>
+      <div style="position:absolute; bottom:-90px; left:-30px; width:250px; height:250px; border-radius:999px; background:radial-gradient(circle, rgba(16,185,129,0.18), rgba(16,185,129,0));"></div>
+
+      <div style="position:relative; padding:clamp(28px, 5vw, 72px) clamp(18px, 4vw, 40px) clamp(28px, 4vw, 46px) clamp(18px, 4vw, 40px);">
+        <div style="display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); color:#bfdbfe; font-size:clamp(12px, 2vw, 13px); max-width:100%; box-sizing:border-box;">
+          <span>●</span>
+          <span>Building backend systems that scale, connect, and stay resilient</span>
         </div>
-    </div>
-    <!-- ./home -->
-    
-    <!-- about -->
-    <div class="section" id="about">
-        <div class="container">
-            <div class="col-md-6" data-aos="fade-up">
-                <h4>01</h4>
-                <h1 class="size-50">Know more<br /> About Gokul  Raghu</h1>
-                <div class="h-50"></div>
-                <p>Gokul was born in Chengalpet and brought up in Nelvely near Vedanthangal, Kanchipuram District on 06.04.1998 to Mr.Raghu.K, Farmer and Mrs.Santhanalakshmi.R. He has one sibling Dinesh Raghu.</p>
-                <h4>Software Pilot</br>Developer</br>Trainer</br>Python</br>IoT</br>Machine Learning</br>Artificial Intelligence</br>Independent Volunteer</br>1st Responder</h4>
-                <div class="h-50"></div> <img src="img/Signature.svg" width="230" alt="" />
-                <div class="h-50"></div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin-top:24px; align-items:start;">
+          <div style="min-width:0;">
+            <h1 style="margin:0; font-size:clamp(34px, 7vw, 58px); line-height:1.02; color:#ffffff; letter-spacing:-1.6px;">
+              Backend & Platform Engineer crafting modern, resilient systems.
+            </h1>
+            <p style="margin:22px 0 0 0; max-width:760px; font-size:clamp(15px, 2.4vw, 18px); line-height:1.9; color:#cbd5e1;">
+              I build engaging digital platforms across backend services, distributed messaging, edge infrastructure,
+              smart environments, and cross-platform product experiences. My work blends APIs, observability,
+              security, data systems, networking, and product thinking into systems that are reliable, fast, and
+              audience-ready.
+            </p>
+
+            <div style="margin-top:28px; display:flex; flex-wrap:wrap; gap:12px;">
+              <a href="mailto:gokulsouthern@gmail.com" style="text-decoration:none; background:linear-gradient(90deg, #3b82f6, #8b5cf6); color:#ffffff; padding:13px 22px; border-radius:14px; font-weight:700; box-shadow:0 14px 30px rgba(59,130,246,0.26);">Contact Me</a>
+              <a href="https://linkedin.com/in/gokul-raghu" target="_blank" style="text-decoration:none; background:rgba(255,255,255,0.05); color:#e2e8f0; padding:13px 22px; border-radius:14px; border:1px solid rgba(255,255,255,0.08);">LinkedIn</a>
+              <a href="#projects" style="text-decoration:none; background:rgba(255,255,255,0.05); color:#e2e8f0; padding:13px 22px; border-radius:14px; border:1px solid rgba(255,255,255,0.08);">Explore Work</a>
             </div>
-            <div class="col-md-6 about-img-div">
-                <div class="about-border" data-aos="fade-up" data-aos-delay=".5"></div>
-                <img src="img/about-img.jpg" width="400" class="img-responsive" alt="" align="right" data-aos="fade-right" data-aos-delay="0" />
+          </div>
+
+          <div style="display:grid; gap:14px; align-content:start; min-width:0;">
+            <div style="border-radius:22px; padding:20px; background:linear-gradient(180deg, rgba(15,23,42,0.92), rgba(30,41,59,0.78)); border:1px solid rgba(255,255,255,0.07);">
+              <div style="font-size:13px; color:#93c5fd; margin-bottom:8px;">Core Focus</div>
+              <div style="font-size:clamp(18px, 3vw, 24px); color:#ffffff; font-weight:700; line-height:1.35;">Distributed systems, APIs, messaging, observability, smart environments.</div>
             </div>
-        </div>
-    </div>
-    <!-- ./about -->
-    
-    <!-- experience  -->
-    <div class="section" id="experience">
-        <div class="container">
-            <div class="col-md-12">
-                <h4>02</h4>
-                <h1 class="size-50">Timeline <br />and Experience</h1>
-                <div class="h-50"></div>
+            <div style="border-radius:22px; padding:20px; background:linear-gradient(180deg, rgba(15,23,42,0.92), rgba(30,41,59,0.78)); border:1px solid rgba(255,255,255,0.07);">
+              <div style="font-size:13px; color:#86efac; margin-bottom:8px;">Engineering Style</div>
+              <div style="font-size:16px; color:#dbeafe; line-height:1.8;">Zero trust thinking, zero downtime mindset, product-driven implementation, and platform reliability.</div>
             </div>
-            <div class="col-md-12">
-                <ul class="timeline">
-                    <li class="timeline-event" data-aos="fade-up">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">2015 - 2018</p>
-                            <h3>Bachelor in Mathematics and Computer Applications</h3>
-                            <h4>University of Madras</h4>
-                            <p><strong>After his schooling he completed his B.Sc (Mathematics and Computer Applications) at Affiliated college in University of Madras, Madurantakam in 2015-18.</strong>
-                                <br>During his college days he joined in NATIONAL SERVICE SCHEME. He coordinated and guided many students to achieve their path and created many portfolio in his college. 1st National level integration camp deligate for NRI people development, and receives many awards and nominated himself to Indra Gandhi Award (IG Award)</p>
-                        </div>
-                    </li>
-                    <li class="timeline-event" data-aos="fade-up">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">2018 - 2020</p>
-                            <h3>Masters in Information Technology</h3>
-                            <h4>University of Madras</h4>
-                            <p><strong>After his bachelor degree he completed his M.Sc (Information Technology) at Affiliated college in University of Madras, Chennai in 2018-20.</strong>
-                                <br>Also he continues his passion towards Machine Learning in Artificial Intelligence.</p>
-                        </div>
-                    </li>
-                    <li class="timeline-event" id="project" data-aos="fade-up">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">May 2019 - Aug 2019</p>
-                            <h3>Machine Learning in AI - Internship</h3>
-                            <h4>Asia University(Taiwan)</h4>
-                            <p><strong>Long term care companion robot with Raspberry pi for Helmet detection and Nvidia Jetson nano for security system projects. Designed good companion robot for their residents such as Chong-Zhi Nursing home, Liougu community, Guangfu village.</strong>
-                                <br>He has a team, with his team he done many projects.</p>
-                        </div>
-                    </li>
-                    <li class="timeline-event" data-aos="fade-up">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">Dec 2019 - Feb 2020</p>
-                            <h3>Python developer - Trainee</h3>
-                            <h4>Renoteq Labs Pvt Ltd</h4>
-                            <p><strong>Acquired strong experience in handling project using various platforms such as, Python in order of application, software, platform development support and also gained extensive knowledge and experience on the products with the guidance of skilled engineers.</strong>
-                                <br>He worked with skilled team, with them he done many projects.</p>
-                        </div>
-                    </li>
-                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".2">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">NOV - DEC 2020</p>
-                            <h3>Startup support to growing youngsters</h3>
-                            <h4>REACGO TECHNOLOGIES</h4>
-							<p>Supported to create a global startup in IT sector and telecommunication. Founded in 2020 and the company has been committed to providing integrated and end-to-end innovations to deliver excellence and value to client, carriers, businesses and public sector from over 20 countries around the world to enable increased connectivity and productivity. </p>
-							
-							<p>With a combination of online and offline platforms such as the Share website, LinkedIn, Twitter, Facebook page, culture wall and digital screens, Reacgo has created a comprehensive, timely and effective collection of media platforms to promote its corporate culture.. Core Values: Respecting each other and being faithful to the Reacgo Cause Serving with dedication and being committed to our customers Endeavoring with creativity to establish a famous Reacgo brand Operating with scientific management to increase corporate performance.</p>
-                            <p>Introduced news products and services.</p>
-							<p>1. Website</br>2. Mobile app (Application)</br>3. Graphic designing</br>4. IoT projects</br>5. Social Media (SEO)</br>6. Branding your site and mobile app</br>7. Content writing (Blog maintenance)</br>8. Providing virtual meeting with Facebook or YouTube live</br>9. School college ID card</br>10. Certificate, business card, posters, pamphlet designs(Soft & Hard copy)</br>11. Online event coordination like competition, Talent Display, Talent Hunt along with certificates</p>
-                        </div>
-                    </li>
-                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".4">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">Covid-19 Lockdown</p>
-                            <h3>Lockdown Classes</h3>
-                            <h4>"Teaching makes you young and beautiful, only if you show your passion for it."</h4>
-                            <p><strong>His passion that taking classes as a volunteer collaborated with Ooruni Foundation, Thozhan Organization on Python, HTML css, wordpress and react native for good cause to rural students.</strong>
-                                <br>He is a core volunteer in Directions for Volunteers, Ooruni Foundation, THOZHAN Organization, We are your Voice. He has done many Volunteering activities in various areas and with his team he has done an awareness GOOD SAMARITAN LAW, GOLDEN HOUR , AFN (ACCIDENT FREE NATION)  over his National camp on his NSS activities recently.</p>
-                        </div>
-                    </li>
-
-                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".2">
-
-                        <label class="timeline-event-icon"></label>
-
-                        <div class="timeline-event-copy">
-
-                            <p class="timeline-event-thumbnail">DEC - 2020</p>
-
-                            <h3>Software Engineer</h3>
-
-                            <h4>GEO EXPLORATION SERVICE AND ANALYSIS</h4>
-
-							<p>Geo Exploration Services & Analysis is an Indian company incorporated in Chennai in February 2012 providing LiDAR related services like software support, LiDAR based mapping, power line digitization, power line classification, asset management, hydrology – break line extraction, rail road mapping etc,</p>
-
-							<h4>Machine Learning</h4>
-
-							<p>
-
-• Built add-on services for file conversion and calculating area as Flask web services (incl. KML, KMZ, GeoJson, SHP, LAZ, Point Cloud).</br>
-
-• Detecting the amount of blur and identical things in an images dataset that edge detection, sharpener in edge, using Laplacian filter and Fast Fourier transform.</br>
-
-• Efficiently deployed and integrated software developed by team and updated deployment scripts to improve continuous integration practices.</br>
-
-
-• Used various ideas from distributed computing, large-scale design, real-time data processing, data storage, ML, and AI to solve challenging problems.</p>
-
-                            
-        <h4>Web Development</h4>       
-<p>
-
-• Engineered modern applications in Flask and Django using Python and React with Asp.net which includes cross-platform compatible solutions.</br>
-
-• Worked closely with core technology teams and other platform teams to balance cross-platform consistency with Hybrid mobile application (React Native) – optimized and closely worked with product managers and designers to define a rich React experience.</br>
-</div>
-
-                    </li>
-                    <li class="timeline-event" data-aos="fade-up" data-aos-delay=".4">
-                        <label class="timeline-event-icon"></label>
-                        <div class="timeline-event-copy">
-                            <p class="timeline-event-thumbnail">Later</p>
-                            <h3>Every end of the day he spend his time to Creative thinking.</h3>
-                            <h3>Also he has a developer passion in Machine learning, Artificial Intelligence, Python software, and regular Github user.</h3>
-                            <h3>He started to do session for various schools, colleges, companies to create an "Importance of Mobile Application development, Augmented reality and Artificial Intelligence".</h3>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- ./experience -->
-    
-    <!-- projects -->
-    <div class="section" id="projects">
-        <div class="container">
-            <div class="col-md-12">
-                <h4>03</h4>
-                <h1 class="size-50">Photo <br /> collections Few</h1> 
-            </div>
-            <!-- main container -->
-            <div class="main-container portfolio-inner clearfix">
-                <!-- portfolio div -->
-                <div class="portfolio-div">
-                    <div class="portfolio">
-                        <!-- portfolio_filter -->
-                        <div class="categories-grid wow fadeInLeft">
-                            <nav class="categories">
-                                <ul class="portfolio_filter">
-                                    <li><a href="" class="active" data-filter="*">All</a></li>
-                                    <li><a href="" data-filter=".photography">Softare Activities</a></li>
-                                    <li><a href="" data-filter=".logo">Volunteering Activities</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- portfolio_filter -->
-                        
-                        <!-- portfolio_container -->
-                        <div class="no-padding portfolio_container clearfix" data-aos="fade-up">
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6  fashion logo">
-                                <a id="demo01" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/01.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>More Details</span> <em>Click here</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 ads graphics">
-                                <a id="demo02" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/03.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>More Details</span> <em>Click here</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 photography">
-                                <a id="demo03" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/02.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>More Details</span> <em>Click here</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 fashion ads">
-                                <a id="demo04" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/04.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>More Details</span> <em>Click here</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 graphics ads">
-                                <a id="demo05" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/05.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>More Details</span> <em>Click here</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 photography">
-                                <a id="demo06" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/010.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>More Details</span> <em>Click here</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 graphics ads">
-                                <a id="demo07" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/06.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>More Details</span> <em>Click here</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 graphics ads">
-                                <a id="demo08" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/07.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>More Details</span> <em>Click here</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                            
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 graphics ads">
-                                <a id="demo09" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/08.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>More Details</span> <em>Click here</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-							
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 graphics ads">
-                                <a id="demo09" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/010.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>More Details</span> <em>Click here</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-							
-                            <!-- single work -->
-                            <div class="col-md-4 col-sm-6 graphics ads">
-                                <a id="demo09" href="#animatedModal" class="portfolio_item"> <img src="img/portfolio/011.jpg" alt="image" class="img-responsive" />
-                                    <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>More Details</span> <em>Click here</em> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- end single work -->
-                        </div>
-                        <!-- end portfolio_container -->
-                    </div>
-                    <!-- portfolio -->
-                </div>
-                <!-- end portfolio div -->
-            </div>
-            <!-- end main container -->
-        </div>
-    </div>
-    <!-- ./projects -->
-    
-    <!-- contact -->
-    <div class="section" id="contact">
-        <div class="container">
-            <div class="col-md-12">
-                <h4>04</h4>
-                <h1 class="size-50">Contact  Me</h1>
-                <div class="h-50"></div>
-            </div>
-            <div class="col-md-4" data-aos="fade-up">
-
-                <h3>Mobile Number</h3>
-                <p>+91 9597511306</p>
-                
-                <h3>Email</h3>
-                <p>gokulsouthern@gmail.com</p>
-
-                <h3>Social Network</h3>
-
-                <ul class="social">
-                    <li><a href="https://www.facebook.com/jokul.gokul/"><i class="ion-social-facebook"></i></a></li>
-                    <li><a href="https://twitter.com/RaghuGokul/"><i class="ion-social-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com/gokuljokul/"><i class="ion-social-instagram"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/gokul-raghu/"><i class="ion-social-Hello"></i></a></li>
-					
-                </ul>
-                <div class="clearfix"></div>
-                <div class="h-50"></div>
-            </div>
-            <div class="col-md-8" data-aos="fade-up">
-                <form class="contact-bg" id="contact-form" name="contact" method="post" novalidate="novalidate">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" />
-                    <input type="email" name="email" class="form-control" placeholder="Your E-mail" />
-                    <input type="text" name="phone" class="form-control" placeholder="Phone Number" />
-                    <textarea name="message" class="form-control" placeholder="Your Message" style="height:120px"></textarea>
-                    <button id="submit" type="submit" name="submit" class="btn btn-glance">Send</button>
-                    <div id="success">
-                        <p class="green textcenter"> Your message was sent successfully! I will be in touch as soon as I can. </p>
-                    </div>
-                    <div id="error">
-                        <p> Something went wrong, try refreshing and submitting the form again. </p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- ./contact -->
-
-    <!--DEMO01-->
-    <div id="animatedModal" class="popup-modal">
-        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
-        <div id="btn-close-modal" class="close-animatedModal close-popup-modal"> <i class="ion-close-round"></i> </div>
-        <div class="clearfix"></div>
-        <div class="modal-content">
-            <div class="container">
-                <div class="portfolio-padding">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2>Gokul Raghu<br /> Social Activist & Software Developer</h2>
-                        <div class="h-50"></div>
-                        <p>Have you ever come across any newspaper or TV news or social media without seeing technology news? They may seem like just news to us, but to the developer, it’s a fear that soon he has to learn and if fail, such loss which words can’t describe. </p>
-                        <p>Respecting each other and being faithful to the Reacgo Cause Serving with dedication and being committed to our customers Endeavoring with creativity to establish a famous Reacgo brand Operating with scientific management to increase corporate performance.</p>
-                        <br />
-                        <br /> <img src="img/portfolio/02.jpg" alt="" class="img-responsive" />
-                        <br />
-                        <br />
-                        <p>To enable connectivity and trust everywhere and to connect the world with continuous innovation for a better future. With a combination of online and offline platforms such as the Share website, LinkedIn, Twitter, Facebook page, culture wall and digital screens, he has created a comprehensive, timely and effective collection of media platforms to promote its corporate culture.</p>
-                        <p>Our team has been recognized several times for our achievements in Technology. Also, many from the common public has joined hands with us during the campaigns to contribute to the rural students.</p>
-                        <br />
-                        <br /> </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="verybottom">
-        <div class="container">
-          <div class="row">
-            <div class="span6">
-              <p>
-                &copy; Gokul Raghu - All right reserved
-              </p>
-            </div>
-            <div class="span6">
-              <div class="credits">
-                <!--
-                  All the links in the footer should remain intact.
-                  You can delete the links only if you purchased the pro version.
-                  Licensing information: https://bootstrapmade.com/license/
-                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Reacgo
-                -->
-                Designed by @2020 <a href="https://www.facebook.com/jokul.gokul">Gokul</a>
-              </div>
+            <div style="border-radius:22px; padding:20px; background:linear-gradient(180deg, rgba(15,23,42,0.92), rgba(30,41,59,0.78)); border:1px solid rgba(255,255,255,0.07);">
+              <div style="font-size:13px; color:#f9a8d4; margin-bottom:8px;">Cross Device Compatible</div>
+              <div style="font-size:16px; color:#dbeafe; line-height:1.8;">Designed to present clearly across desktop, tablet, and mobile screens for modern cross-platform access.</div>
             </div>
           </div>
         </div>
       </div>
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <!--  plugins  -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
+    </section>
 
-    <!--  main script  -->
-    <script src="js/custom.js"></script>
+    <!-- Cross-device banner -->
+    <section style="margin-top:20px; border-radius:24px; padding:18px 18px; background:linear-gradient(135deg, rgba(59,130,246,0.10), rgba(16,185,129,0.10), rgba(139,92,246,0.10)); border:1px solid rgba(255,255,255,0.07);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px; align-items:center;">
+        <div>
+          <div style="font-size:12px; color:#93c5fd; letter-spacing:0.6px;">EMERGING INDUSTRY EXPECTATION</div>
+          <div style="font-size:clamp(20px, 4vw, 28px); color:#ffffff; font-weight:700; margin-top:6px;">Cross-device compatible profile experience</div>
+        </div>
+        <div style="color:#cbd5e1; line-height:1.8;">
+          This version is structured to remain readable and engaging on phones, tablets, laptops, and wider desktop screens with flexible grids, scalable typography, and touch-friendly spacing.
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlights" style="margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:18px;">
+      <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); box-shadow:0 18px 36px rgba(0,0,0,0.22);">
+        <div style="font-size:27px;">📡</div>
+        <div style="margin-top:12px; color:#ffffff; font-size:18px; font-weight:700;">Infrastructure & Messaging</div>
+        <div style="margin-top:8px; color:#cbd5e1; line-height:1.75;">Working with NATS for efficient distributed messaging and zero trust remote access for secure interactions.</div>
+      </div>
+      <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); box-shadow:0 18px 36px rgba(0,0,0,0.22);">
+        <div style="font-size:27px;">⚡</div>
+        <div style="margin-top:12px; color:#ffffff; font-size:18px; font-weight:700;">Edge Computing</div>
+        <div style="margin-top:8px; color:#cbd5e1; line-height:1.75;">Experienced in edge cloud infrastructure for low-latency, real-world applications and connected systems.</div>
+      </div>
+      <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); box-shadow:0 18px 36px rgba(0,0,0,0.22);">
+        <div style="font-size:27px;">🏢</div>
+        <div style="margin-top:12px; color:#ffffff; font-size:18px; font-weight:700;">Smart Environments</div>
+        <div style="margin-top:8px; color:#cbd5e1; line-height:1.75;">Building smart building solutions where physical spaces stay connected, intelligent, and continuously aware.</div>
+      </div>
+      <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); box-shadow:0 18px 36px rgba(0,0,0,0.22);">
+        <div style="font-size:27px;">🛡️</div>
+        <div style="margin-top:12px; color:#ffffff; font-size:18px; font-weight:700;">Resilience & Security</div>
+        <div style="margin-top:8px; color:#cbd5e1; line-height:1.75;">Focused on zero downtime architectures, zero trust principles, and secure, authenticated platform design.</div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="margin-top:28px; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+      <div style="border-radius:28px; padding:30px; background:linear-gradient(180deg, rgba(12,18,30,0.96), rgba(11,17,29,0.88)); border:1px solid rgba(255,255,255,0.07);">
+        <h2 style="margin:0 0 14px 0; color:#ffffff; font-size:clamp(26px, 4vw, 32px);">About Me</h2>
+        <p style="margin:0; color:#cbd5e1; font-size:16px; line-height:1.95;">
+          I work across backend engineering, platform development, service operations, and product-enabling systems.
+          My background spans PaaS and SaaS development, APIs, messaging, networking, observability, Linux operations,
+          edge infrastructure, and intelligent system integration. I enjoy building systems that feel technically strong
+          and product-polished at the same time.
+        </p>
+      </div>
+      <div style="border-radius:28px; padding:30px; background:linear-gradient(180deg, rgba(15,23,42,0.96), rgba(30,41,59,0.82)); border:1px solid rgba(255,255,255,0.07);">
+        <h2 style="margin:0 0 14px 0; color:#ffffff; font-size:clamp(24px, 4vw, 28px);">Snapshot</h2>
+        <div style="display:grid; gap:12px;">
+          <div style="padding:12px 14px; border-radius:16px; background:rgba(255,255,255,0.04); color:#dbeafe;">Postgres for reliable data management</div>
+          <div style="padding:12px 14px; border-radius:16px; background:rgba(255,255,255,0.04); color:#dbeafe;">Git for streamlined collaboration</div>
+          <div style="padding:12px 14px; border-radius:16px; background:rgba(255,255,255,0.04); color:#dbeafe;">Linux-first operating environment</div>
+          <div style="padding:12px 14px; border-radius:16px; background:rgba(255,255,255,0.04); color:#dbeafe;">Prompt engineering exploration</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" style="margin-top:28px; border-radius:30px; padding:30px 18px; background:linear-gradient(135deg, rgba(16,24,40,0.96), rgba(12,18,30,0.94)); border:1px solid rgba(255,255,255,0.07);">
+      <h2 style="margin:0 0 22px 12px; color:#ffffff; font-size:clamp(26px, 4vw, 32px);">Skill Architecture</h2>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px;">
+
+        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
+          <div style="font-size:24px;">💻</div>
+          <h3 style="margin:12px 0 10px 0; color:#93c5fd;">Programming</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Python</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">JavaScript</span>
+          </div>
+        </div>
+
+        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
+          <div style="font-size:24px;">🧩</div>
+          <h3 style="margin:12px 0 10px 0; color:#86efac;">Frameworks & UI</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Flask</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Django</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">React</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">React Native</span>
+          </div>
+        </div>
+
+        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
+          <div style="font-size:24px;">🔌</div>
+          <h3 style="margin:12px 0 10px 0; color:#c4b5fd;">Backend & Platform</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">REST API</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">gRPC</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Microservices</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">PaaS</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">SaaS</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">System Design</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Multi Tenant</span>
+          </div>
+        </div>
+
+        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
+          <div style="font-size:24px;">📡</div>
+          <h3 style="margin:12px 0 10px 0; color:#f9a8d4;">Messaging & Infrastructure</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">NATS</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Kafka</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Edge Cloud</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Zero Trust</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Networking</span>
+          </div>
+        </div>
+
+        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
+          <div style="font-size:24px;">🗄️</div>
+          <h3 style="margin:12px 0 10px 0; color:#fcd34d;">Data & Analytics</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Postgres</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Analytics</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Real-time Data</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Data Storage</span>
+          </div>
+        </div>
+
+        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
+          <div style="font-size:24px;">📊</div>
+          <h3 style="margin:12px 0 10px 0; color:#67e8f9;">Observability & Support</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Logs</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Metrics</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Grafana</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">strace</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">pcap</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">tcpdump</span>
+          </div>
+        </div>
+
+        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
+          <div style="font-size:24px;">⚙️</div>
+          <h3 style="margin:12px 0 10px 0; color:#a7f3d0;">DevOps & Tooling</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Docker</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Linux</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Ubuntu</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Git</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Jenkins</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Nginx</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">APISIX</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Keycloak</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Build Scripts</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Project Manifest</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Repo Sync</span>
+          </div>
+        </div>
+
+        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
+          <div style="font-size:24px;">🧠</div>
+          <h3 style="margin:12px 0 10px 0; color:#fca5a5;">Emerging Practices</h3>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Prompt Engineering</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">ML</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">AI</span>
+            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Cross Device UX</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" style="margin-top:28px;">
+      <div style="display:flex; justify-content:space-between; align-items:end; gap:14px; flex-wrap:wrap;">
+        <h2 style="margin:0; color:#ffffff; font-size:clamp(26px, 4vw, 32px);">Selected Work</h2>
+        <div style="color:#94a3b8; font-size:14px;">Representative project cards shaped around your profile</div>
+      </div>
+
+      <div style="margin-top:18px; display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px;">
+
+        <div style="border-radius:28px; padding:24px; background:linear-gradient(180deg, rgba(14,20,34,0.96), rgba(24,36,58,0.82)); border:1px solid rgba(255,255,255,0.07); box-shadow:0 18px 40px rgba(0,0,0,0.26);">
+          <div style="font-size:26px;">🗺️</div>
+          <h3 style="margin:14px 0 10px 0; color:#ffffff;">Geo & File Conversion Services</h3>
+          <p style="margin:0; line-height:1.82; color:#cbd5e1;">
+            Built Flask-based add-on services for file conversion and area calculation across KML, KMZ, GeoJSON,
+            SHP, LAZ, and point cloud workflows.
+          </p>
+          <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">Flask</span>
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">Python</span>
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">Geo Data</span>
+          </div>
+        </div>
+
+        <div style="border-radius:28px; padding:24px; background:linear-gradient(180deg, rgba(14,20,34,0.96), rgba(24,36,58,0.82)); border:1px solid rgba(255,255,255,0.07); box-shadow:0 18px 40px rgba(0,0,0,0.26);">
+          <div style="font-size:26px;">🖼️</div>
+          <h3 style="margin:14px 0 10px 0; color:#ffffff;">Image Quality & Similarity Processing</h3>
+          <p style="margin:0; line-height:1.82; color:#cbd5e1;">
+            Worked on blur detection and identical-image discovery using edge sharpening, Laplacian filters,
+            and Fast Fourier Transform techniques.
+          </p>
+          <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">Image Processing</span>
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">FFT</span>
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">Python</span>
+          </div>
+        </div>
+
+        <div style="border-radius:28px; padding:24px; background:linear-gradient(180deg, rgba(14,20,34,0.96), rgba(24,36,58,0.82)); border:1px solid rgba(255,255,255,0.07); box-shadow:0 18px 40px rgba(0,0,0,0.26);">
+          <div style="font-size:26px;">📱</div>
+          <h3 style="margin:14px 0 10px 0; color:#ffffff;">Cross Platform Product Experiences</h3>
+          <p style="margin:0; line-height:1.82; color:#cbd5e1;">
+            Built modern applications with Flask, Django, Python, React, and React Native while aligning
+            cross-platform consistency with product, design, and engineering needs.
+          </p>
+          <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">Django</span>
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">React</span>
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">React Native</span>
+          </div>
+        </div>
+
+        <div style="border-radius:28px; padding:24px; background:linear-gradient(180deg, rgba(14,20,34,0.96), rgba(24,36,58,0.82)); border:1px solid rgba(255,255,255,0.07); box-shadow:0 18px 40px rgba(0,0,0,0.26);">
+          <div style="font-size:26px;">🚦</div>
+          <h3 style="margin:14px 0 10px 0; color:#ffffff;">Platform Deployment & Integration</h3>
+          <p style="margin:0; line-height:1.82; color:#cbd5e1;">
+            Efficiently deployed and integrated team-built software, improved deployment scripts,
+            and strengthened continuous integration practices across services.
+          </p>
+          <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">CI</span>
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">Deployment</span>
+            <span style="background:#0f172a; padding:8px 10px; border-radius:999px;">Jenkins</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" style="margin-top:28px; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+      <div style="border-radius:28px; padding:30px; background:linear-gradient(180deg, rgba(12,18,30,0.96), rgba(11,17,29,0.88)); border:1px solid rgba(255,255,255,0.07);">
+        <h2 style="margin:0 0 16px 0; color:#ffffff; font-size:clamp(26px, 4vw, 30px);">Engineering Experience</h2>
+        <div style="display:grid; gap:14px; color:#cbd5e1; line-height:1.85;">
+          <div>• Used ideas from distributed computing, large-scale design, real-time processing, storage, ML, and AI to solve challenging problems.</div>
+          <div>• Worked closely with core technology teams and platform teams to balance cross-platform consistency and product execution.</div>
+          <div>• Developed solutions as a PaaS and SaaS engineer with platform-driven innovation at the center.</div>
+          <div>• Comfortable with networking fundamentals critical to modern distributed applications.</div>
+        </div>
+      </div>
+
+      <div style="border-radius:28px; padding:30px; background:linear-gradient(180deg, rgba(15,23,42,0.96), rgba(30,41,59,0.82)); border:1px solid rgba(255,255,255,0.07);">
+        <h2 style="margin:0 0 16px 0; color:#ffffff; font-size:clamp(26px, 4vw, 30px);">Cross Device Readiness</h2>
+        <div style="display:grid; gap:14px;">
+          <div style="padding:14px 16px; border-radius:16px; background:rgba(255,255,255,0.04); color:#dbeafe;">Touch-friendly buttons and spacing for mobile devices</div>
+          <div style="padding:14px 16px; border-radius:16px; background:rgba(255,255,255,0.04); color:#dbeafe;">Flexible grid sections that collapse cleanly on smaller screens</div>
+          <div style="padding:14px 16px; border-radius:16px; background:rgba(255,255,255,0.04); color:#dbeafe;">Scalable text sizing for readability across devices</div>
+          <div style="padding:14px 16px; border-radius:16px; background:rgba(255,255,255,0.04); color:#dbeafe;">Desktop-friendly structure without losing mobile clarity</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="margin-top:28px; border-radius:30px; padding:30px 18px; background:linear-gradient(135deg, rgba(59,130,246,0.16), rgba(139,92,246,0.14), rgba(16,185,129,0.10)); border:1px solid rgba(255,255,255,0.08); box-shadow:0 22px 50px rgba(0,0,0,0.25);">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:22px;">
+        <div>
+          <h2 style="margin:0 0 14px 0; color:#ffffff; font-size:clamp(26px, 4vw, 32px);">Reach Me</h2>
+          <p style="margin:0; color:#dbeafe; line-height:1.9;">
+            You can contact me for backend engineering, distributed systems, platform architecture, smart environment systems,
+            developer tooling, product engineering, and production support discussions.
+          </p>
+
+          <div style="margin-top:18px; display:grid; gap:12px;">
+            <div style="padding:16px 18px; border-radius:18px; background:rgba(5,8,16,0.38); border:1px solid rgba(255,255,255,0.07);">
+              <div style="font-size:12px; color:#93c5fd; margin-bottom:6px;">EMAIL</div>
+              <a href="mailto:gokulsouthern@gmail.com" style="color:#ffffff; text-decoration:none; font-size:18px; word-break:break-word;">gokulsouthern@gmail.com</a>
+            </div>
+            <div style="padding:16px 18px; border-radius:18px; background:rgba(5,8,16,0.38); border:1px solid rgba(255,255,255,0.07);">
+              <div style="font-size:12px; color:#86efac; margin-bottom:6px;">LINKEDIN</div>
+              <a href="https://linkedin.com/in/gokul-raghu" target="_blank" style="color:#ffffff; text-decoration:none; font-size:18px; word-break:break-word;">linkedin.com/in/gokul-raghu</a>
+            </div>
+            <div style="padding:16px 18px; border-radius:18px; background:rgba(5,8,16,0.38); border:1px solid rgba(255,255,255,0.07); color:#cbd5e1;">
+              Instagram, Reddit, website, Twitter, and other social links can be added here later.
+            </div>
+          </div>
+        </div>
+
+        <div style="padding:24px; border-radius:24px; background:rgba(6,10,18,0.46); border:1px solid rgba(255,255,255,0.08);">
+          <h3 style="margin:0 0 14px 0; color:#ffffff; font-size:24px;">Contact Me Template</h3>
+          <p style="margin:0; color:#dbeafe; line-height:1.95;">
+            Subject: Collaboration / Backend Engineering Opportunity<br><br>
+            Hi Gokul,<br>
+            I came across your profile and wanted to connect regarding backend engineering, platform systems, or product collaboration.<br>
+            I would like to discuss [project / role / collaboration topic].<br><br>
+            Regards,<br>
+            [Your Name]
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
 </body>
-
 </html>
