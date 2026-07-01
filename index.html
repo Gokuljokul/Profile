@@ -1,313 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gokul Raghu | Backend Platform Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation: Gokul & Sharumathi</title>
+  <!-- Google Fonts for Traditional & Elegant Typography -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link
+    href="https://googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Marcellus&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --maroon: #800020;
+      --gold: #D4AF37;
+      --cream: #FFFDD0;
+      --dark-gold: #AA7C11;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Marcellus', serif;
+      background-color: var(--maroon);
+      color: var(--cream);
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    /* Parallax Background - Traditional Hindu Gopuram */
+    .bg-hero {
+      background-image: linear-gradient(rgba(128, 0, 32, 0.85), rgba(40, 0, 10, 0.92)), url('https://unsplash.com');
+      background-attachment: fixed;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Traditional Borders & Mandapam Styling */
+    .container {
+      max-width: 650px;
+      width: 100%;
+      border: 4px double var(--gold);
+      padding: 40px 20px;
+      background: rgba(128, 0, 32, 0.6);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Decorative Traditional Elements */
+    .garland {
+      font-size: 24px;
+      letter-spacing: 8px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .shubh {
+      font-family: 'Cinzel Decorative', serif;
+      color: var(--gold);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    h1.script {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: var(--gold);
+      margin: 15px 0;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: #fff;
+      letter-spacing: 2px;
+      margin: 10px 0;
+    }
+
+    .parents {
+      font-size: 1rem;
+      color: #f0e6d2;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .and {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin: 10px 0;
+    }
+
+    .details-box {
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding: 20px 0;
+      margin: 30px 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .date,
+    .time {
+      font-size: 1.3rem;
+      color: var(--gold);
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin: 5px 0;
+    }
+
+    .venue {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    .location-sub {
+      font-size: 1rem;
+      color: #ddd;
+      margin-top: 5px;
+    }
+
+    /* Countdown Timer */
+    #countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .time-block {
+      background: rgba(212, 175, 55, 0.2);
+      border: 1px solid var(--gold);
+      padding: 10px;
+      border-radius: 8px;
+      min-width: 70px;
+    }
+
+    .time-block span {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--gold);
+    }
+
+    .time-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    /* Action Buttons */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30px;
+      align-items: center;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+      color: var(--maroon);
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: 'Marcellus', serif;
+      text-transform: uppercase;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px var(--gold);
+      background: linear-gradient(135deg, #fff, var(--gold));
+    }
+
+    /* Interactive RSVP Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: var(--maroon);
+      border: 3px solid var(--gold);
+      border-radius: 15px;
+      width: 95%;
+      max-width: 900px;
+      height: 90vh;
+      padding: 20px;
+      color: var(--cream);
+      position: relative;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      color: var(--gold);
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--gold);
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--gold);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 5px;
+      font-family: 'Marcellus', serif;
+      font-size: 1rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #fff;
+      box-shadow: 0 0 5px var(--gold);
+    }
+
+    .form-group select option {
+      background: var(--maroon);
+      color: #fff;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+      color: var(--maroon);
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-family: 'Marcellus', serif;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .submit-btn:hover {
+      background: linear-gradient(135deg, #fff, var(--gold));
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1.script {
+        font-size: 3rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        padding: 25px 15px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    .profile-btn {
+      background: none;
+      border: none;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .profile-btn:hover {
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: .3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 15px var(--gold);
+    }
+
+    .social-icons img {
+      width: 28px;
+      height: 28px;
+    }
+  </style>
 </head>
-<body style="margin:0; font-family:Inter, Arial, Helvetica, sans-serif; background:#070b14; color:#e5eefc;">
 
-  <!-- Background -->
-  <div style="position:fixed; inset:0; overflow:hidden; z-index:-1; background:
-    radial-gradient(circle at 10% 10%, rgba(59,130,246,0.18), transparent 28%),
-    radial-gradient(circle at 90% 12%, rgba(139,92,246,0.16), transparent 24%),
-    radial-gradient(circle at 50% 55%, rgba(16,185,129,0.09), transparent 28%),
-    linear-gradient(180deg, #08101d 0%, #070b14 48%, #05070f 100%);">
-  </div>
+<body>
+  <div class="bg-hero">
+    <!-- Main Invitation Card -->
+    <div class="container">
+      <div class="garland">💐🍃🌼🍃💐</div>
+      <div class="shubh">|| WEDDING INVITATION ||</div>
+      <p style="margin-top: 20px; font-style: italic; color: #ddd;">
+        We cordially invite you and your family to celebrate the auspicious occasion of the marriage of
+      </p>
 
-  <!-- Sticky navbar -->
-  <div style="position:sticky; top:0; z-index:999; backdrop-filter:blur(18px); background:rgba(7,11,20,0.78); border-bottom:1px solid rgba(255,255,255,0.06);">
-    <div style="max-width:1220px; margin:0 auto; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
-      <div style="display:flex; align-items:center; gap:12px; min-width:0;">
-        <div style="width:40px; height:40px; min-width:40px; border-radius:14px; background:linear-gradient(135deg, #3b82f6, #8b5cf6, #10b981); box-shadow:0 10px 24px rgba(59,130,246,0.28);"></div>
-        <div style="min-width:0;">
-          <div style="font-size:17px; font-weight:700; color:#ffffff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Gokul Raghu</div>
-          <div style="font-size:12px; color:#94a3b8;">Backend • Platform • Distributed Systems</div>
+      <!-- Groom Details -->
+      <div style="margin-top: 30px;">
+        <h1 class="script"><button class="profile-btn" onclick="openProfileModal('gokul')">Gokul</button></h1>
+        <p class="parents">Son of Mr. Raghu & Mrs. Santhanalakshmi</p>
+      </div>
+
+      <div class="and">with</div>
+
+      <!-- Bride Details -->
+      <div>
+        <h1 class="script"><button class="profile-btn" onclick="openProfileModal('sharumathi')">Sharumathi</button></h1>
+        <p class="parents">Daughter of Mr. Gobi & Mrs. Lalitha</p>
+      </div>
+
+      <!-- Event Details -->
+      <div class="details-box">
+        <div class="date">Sunday, September 13, 2026</div>
+        <div class="time">06:00 AM - 07:30 AM (Muhurtham)</div>
+        <div class="venue" style="margin-top: 20px; font-weight: bold; color: var(--gold);">
+          📍 Narpavi Arangam
+        </div>
+        <div class="location-sub">Sankarankovil, Tenkasi District, Tamil Nadu</div>
+      </div>
+
+      <!-- Countdown Timer Component -->
+      <h3 style="color: var(--gold); letter-spacing: 1px; margin-bottom: 10px;">Awaiting the Auspicious Hour</h3>
+      <div id="countdown">
+        <div class="time-block"><span id="days">00</span>
+          <div class="time-label">Days</div>
+        </div>
+        <div class="time-block"><span id="hours">00</span>
+          <div class="time-label">Hours</div>
+        </div>
+        <div class="time-block"><span id="minutes">00</span>
+          <div class="time-label">Minutes</div>
+        </div>
+        <div class="time-block"><span id="seconds">00</span>
+          <div class="time-label">Seconds</div>
         </div>
       </div>
-      <div style="display:flex; gap:10px 14px; flex-wrap:wrap;">
-        <a href="#about" style="color:#cbd5e1; text-decoration:none; font-size:14px;">About</a>
-        <a href="#highlights" style="color:#cbd5e1; text-decoration:none; font-size:14px;">Highlights</a>
-        <a href="#platform" style="color:#cbd5e1; text-decoration:none; font-size:14px;">Platform</a>
-        <a href="#skills" style="color:#cbd5e1; text-decoration:none; font-size:14px;">Skills</a>
-        <a href="#experience" style="color:#cbd5e1; text-decoration:none; font-size:14px;">Experience</a>
+      <!-- Action Buttons -->
+      <div class="btn-group">
+        <button class="btn" onclick="openRSVPModal()">RSVP Now</button>
+      </div>
+    </div>
+  </div>
+  <!-- RSVP Modal -->
+  <div id="rsvpModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeRSVPModal()">&times;</span>
+      <h2 style="color: var(--gold); margin-bottom: 20px;">RSVP for the Wedding</h2>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSejKUvoWn0EJ8hh4Ptd9KKqRfbvTuUkVpfLXI3R2ksB3ZQ3RA/viewform?embedded=true"
+        style="
+                width:100%;
+                height:calc(80vh - 70px);
+                border:none;
+                border-radius:10px;
+                background:#fff;
+            " loading="lazy">
+      </iframe>
+    </div>
+  </div>
+  <script>
+    // Countdown Timer Logic
+    const countdownDate = new Date("September 13, 2026 06:00:00").getTime();
+    const countdownFunction = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days.toString().padStart(2, '0');
+      document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "<div style='color: var(--gold); font-size:1.5rem;'>The auspicious moment has arrived!</div>";
+      }
+    }, 1000);
+
+    function openRSVPModal() {
+      document.getElementById('rsvpModal').style.display = 'flex';
+    }
+    function closeRSVPModal() {
+      document.getElementById('rsvpModal').style.display = 'none';
+    }
+    window.onclick = function (event) {
+      if (event.target == document.getElementById('rsvpModal')) {
+        closeRSVPModal();
+      }
+    }
+  </script>
+
+  <div id="profileModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeProfileModal()">&times;</span>
+      <h2 id="profileTitle" style="color: var(--gold); margin-bottom:20px;">Social Profiles</h2>
+      <div class="social-icons">
+        <a id="linkedinLink" target="_blank"><img
+            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"></a>
+        <a id="facebookLink" target="_blank"><img
+            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"></a>
+        <a id="instagramLink" target="_blank"><img
+            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"></a>
       </div>
     </div>
   </div>
 
-  <div style="max-width:1220px; margin:0 auto; padding:22px 16px 56px 16px;">
-
-    <!-- Hero -->
-    <section style="position:relative; overflow:hidden; border-radius:28px; border:1px solid rgba(255,255,255,0.08); background:
-      linear-gradient(135deg, rgba(17,24,39,0.88), rgba(10,14,24,0.96)),
-      linear-gradient(135deg, rgba(59,130,246,0.12), rgba(139,92,246,0.08), rgba(16,185,129,0.08)); box-shadow:0 30px 90px rgba(0,0,0,0.42);">
-      <div style="position:absolute; top:-80px; right:-60px; width:280px; height:280px; border-radius:999px; background:radial-gradient(circle, rgba(59,130,246,0.25), rgba(59,130,246,0));"></div>
-      <div style="position:absolute; bottom:-90px; left:-30px; width:250px; height:250px; border-radius:999px; background:radial-gradient(circle, rgba(16,185,129,0.18), rgba(16,185,129,0));"></div>
-
-      <div style="position:relative; padding:clamp(28px, 5vw, 72px) clamp(18px, 4vw, 40px) clamp(28px, 4vw, 46px) clamp(18px, 4vw, 40px);">
-        <div style="display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); color:#bfdbfe; font-size:clamp(12px, 2vw, 13px); max-width:100%; box-sizing:border-box;">
-          <span>●</span>
-          <span>Building backend systems that scale, connect, and stay resilient</span>
-        </div>
-
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin-top:24px; align-items:start;">
-          <div style="min-width:0;">
-            <h1 style="margin:0; font-size:clamp(34px, 7vw, 58px); line-height:1.02; color:#ffffff; letter-spacing:-1.6px;">
-              Backend & Platform Engineer crafting modern, resilient systems.
-            </h1>
-            <p style="margin:22px 0 0 0; max-width:760px; font-size:clamp(15px, 2.4vw, 18px); line-height:1.9; color:#cbd5e1;">
-              I build engaging digital platforms across backend services, distributed messaging, edge infrastructure,
-              smart environments, and cross-platform product experiences. My work blends APIs, observability,
-              security, data systems, networking, and product thinking into systems that are reliable, fast, and
-              audience-ready.
-            </p>
-
-            <div style="margin-top:28px; display:flex; flex-wrap:wrap; gap:12px;">
-              <a href="mailto:gokulsouthern@gmail.com" style="text-decoration:none; background:linear-gradient(90deg, #3b82f6, #8b5cf6); color:#ffffff; padding:13px 22px; border-radius:14px; font-weight:700; box-shadow:0 14px 30px rgba(59,130,246,0.26);">Contact Me</a>
-              <a href="https://linkedin.com/in/gokul-raghu" target="_blank" style="text-decoration:none; background:rgba(255,255,255,0.05); color:#e2e8f0; padding:13px 22px; border-radius:14px; border:1px solid rgba(255,255,255,0.08);">LinkedIn</a>
-              
-            </div>
-          </div>
-
-          <div style="display:grid; gap:14px; align-content:start; min-width:0;">
-            <div style="border-radius:22px; padding:20px; background:linear-gradient(180deg, rgba(15,23,42,0.92), rgba(30,41,59,0.78)); border:1px solid rgba(255,255,255,0.07);">
-              <div style="font-size:13px; color:#93c5fd; margin-bottom:8px;">Core Focus</div>
-              <div style="font-size:clamp(18px, 3vw, 24px); color:#ffffff; font-weight:700; line-height:1.35;">Distributed systems, APIs, messaging, observability, smart environments.</div>
-            </div>
-            <div style="border-radius:22px; padding:20px; background:linear-gradient(180deg, rgba(15,23,42,0.92), rgba(30,41,59,0.78)); border:1px solid rgba(255,255,255,0.07);">
-              <div style="font-size:13px; color:#86efac; margin-bottom:8px;">Engineering Style</div>
-              <div style="font-size:16px; color:#dbeafe; line-height:1.8;">Zero trust thinking, zero downtime mindset, product-driven implementation, and platform reliability.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Highlights -->
-    <section id="highlights" style="margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:18px;">
-      <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); box-shadow:0 18px 36px rgba(0,0,0,0.22);">
-        <div style="font-size:27px;">📡</div>
-        <div style="margin-top:12px; color:#ffffff; font-size:18px; font-weight:700;">Infrastructure & Messaging</div>
-        <div style="margin-top:8px; color:#cbd5e1; line-height:1.75;">Working with NATS for efficient distributed messaging and zero trust remote access for secure interactions.</div>
-      </div>
-      <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); box-shadow:0 18px 36px rgba(0,0,0,0.22);">
-        <div style="font-size:27px;">⚡</div>
-        <div style="margin-top:12px; color:#ffffff; font-size:18px; font-weight:700;">Edge Computing</div>
-        <div style="margin-top:8px; color:#cbd5e1; line-height:1.75;">Experienced in edge cloud infrastructure for low-latency, real-world applications and connected systems.</div>
-      </div>
-      <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); box-shadow:0 18px 36px rgba(0,0,0,0.22);">
-        <div style="font-size:27px;">🏢</div>
-        <div style="margin-top:12px; color:#ffffff; font-size:18px; font-weight:700;">Smart Environments</div>
-        <div style="margin-top:8px; color:#cbd5e1; line-height:1.75;">Building smart building solutions where physical spaces stay connected, intelligent, and continuously aware.</div>
-      </div>
-      <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); box-shadow:0 18px 36px rgba(0,0,0,0.22);">
-        <div style="font-size:27px;">🛡️</div>
-        <div style="margin-top:12px; color:#ffffff; font-size:18px; font-weight:700;">Resilience & Security</div>
-        <div style="margin-top:8px; color:#cbd5e1; line-height:1.75;">Focused on zero downtime architectures, zero trust principles, and secure, authenticated platform design.</div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" style="margin-top:28px;">
-      <div style="border-radius:28px; padding:30px; background:linear-gradient(180deg, rgba(12,18,30,0.96), rgba(11,17,29,0.88)); border:1px solid rgba(255,255,255,0.07);">
-        <h2 style="margin:0 0 14px 0; color:#ffffff; font-size:clamp(26px, 4vw, 32px);">About Me</h2>
-        <p style="margin:0; color:#cbd5e1; font-size:16px; line-height:1.95;">
-          I work across backend engineering, platform development, service operations, and product-enabling systems.
-          My background spans PaaS and SaaS development, APIs, messaging, networking, observability, Linux operations,
-          edge infrastructure, and intelligent system integration. I enjoy building systems that feel technically strong
-          and product-polished at the same time.
-        </p>
-      </div>
-    
-
-
-    <!-- Platform Contributions -->
-    <section id="platform" style="margin-top:28px;">
-      <div style="border-radius:28px; padding:30px; background:linear-gradient(180deg, rgba(12,18,30,0.96), rgba(11,17,29,0.88)); border:1px solid rgba(255,255,255,0.07);">
-        <h2 style="margin:0 0 18px 0; color:#ffffff; font-size:clamp(26px, 4vw, 32px);">Platform & Backend Contributions</h2>
-        <div style="display:grid; gap:14px; color:#cbd5e1; line-height:1.9;">
-
-          <div>• Built backend services for a PaaS-based platform enabling scalable multi-tenant application deployment and lifecycle management.</div>
-
-          <div>• Developed APIs and data pipelines to ingest, process, and expose Building Management System (BMS), Niagara, and Normal Framework (NF) data for centralized monitoring and control.</div>
-
-          <div>• Designed cloud-based backend systems to aggregate data across multiple buildings, enabling analytics, automation, and intelligent decision-making.</div>
-
-          <div>• Implemented event-driven architectures using NATS and Kafka for reliable communication across distributed services.</div>
-
-          <div>• Contributed to zero-trust security architecture with secure remote access, authentication, and audit logging mechanisms.</div>
-
-          <div>• Integrated edge and cloud systems, ensuring seamless data synchronization and low-latency communication.</div>
-
-          <div>• Built observability systems with logs, metrics, and dashboards for real-time monitoring of platform and building operations.</div>
-
-          <div>• Improved CI/CD pipelines, deployment workflows, and database migration strategies to ensure high availability and resilience.</div>
-
-          <div>• Actively handled production issues, performed RCA (root cause analysis), and enhanced system stability through continuous improvements.</div>
-
-          <div>• Built backend support for JWT-secured services, async APIs, isolated database strategies, and sync services across distributed applications.</div>
-
-          <div>• Worked with database version control using Goose and supported structured migration workflows for safer platform releases.</div>
-
-          <div>• Supported containerized application delivery with Docker, microservices, system services, and production-ready deployment patterns.</div>
-
-          <div>• Used Wireshark, pcap, tcpdump, and observability tooling to troubleshoot network, messaging, and infrastructure-level issues.</div>
-
-          <div>• Contributed to NATS account management, JetStream-based streaming, WebSocket communication, and reliable inter-service communication patterns.</div>
-
-          <div>• Configured API gateways (APISIX), route management, and traffic control for backend services.</div>
-
-          <div>• Managed container orchestration using Docker Compose, volumes, and image versioning for stable deployments.</div>
-
-          <div>• Built and maintained Jenkins CI/CD pipelines for automated build, test, and deployment workflows.</div>
-
-        </div>
-      </div>
-    </section>
-</section>
-
-    <!-- Skills -->
-    <section id="skills" style="margin-top:28px; border-radius:30px; padding:30px 18px; background:linear-gradient(135deg, rgba(16,24,40,0.96), rgba(12,18,30,0.94)); border:1px solid rgba(255,255,255,0.07);">
-      <h2 style="margin:0 0 22px 12px; color:#ffffff; font-size:clamp(26px, 4vw, 32px);">Skill Architecture</h2>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px;">
-
-        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
-          <div style="font-size:24px;">💻</div>
-          <h3 style="margin:12px 0 10px 0; color:#93c5fd;">Programming</h3>
-          <div style="display:flex; flex-wrap:wrap; gap:10px;">
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Python</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">JavaScript</span>
-          </div>
-        </div>
-
-        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
-          <div style="font-size:24px;">🧩</div>
-          <h3 style="margin:12px 0 10px 0; color:#86efac;">Frameworks & UI</h3>
-          <div style="display:flex; flex-wrap:wrap; gap:10px;">
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">FastAPI</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Flask</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">React</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">React Native</span>
-          </div>
-        </div>
-
-        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
-          <div style="font-size:24px;">🔌</div>
-          <h3 style="margin:12px 0 10px 0; color:#c4b5fd;">Backend & Platform</h3>
-          <div style="display:flex; flex-wrap:wrap; gap:10px;">
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">REST API</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Async API</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">gRPC</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">JWT</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Microservices</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">PaaS</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">SaaS</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">System Design</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Multi Tenant</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Isolated DB</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Sync Service</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">System Service</span>
-          </div>
-        </div>
-
-        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
-          <div style="font-size:24px;">📡</div>
-          <h3 style="margin:12px 0 10px 0; color:#f9a8d4;">Messaging & Infrastructure</h3>
-          <div style="display:flex; flex-wrap:wrap; gap:10px;">
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">NATS</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">NATS Account Manager</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">JetStream</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">WebSockets</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Kafka</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Edge Cloud</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Zero Trust</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Networking</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Normal Framework (NF)</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Niagara</span>
-          </div>
-        </div>
-
-        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
-          <div style="font-size:24px;">🗄️</div>
-          <h3 style="margin:12px 0 10px 0; color:#fcd34d;">Data & Analytics</h3>
-          <div style="display:flex; flex-wrap:wrap; gap:10px;">
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Postgres</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Goose</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">DB Migration</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Analytics</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Aggregated Dashboard View</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Real-time Data</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Data Storage</span>
-          </div>
-        </div>
-
-        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
-          <div style="font-size:24px;">📊</div>
-          <h3 style="margin:12px 0 10px 0; color:#67e8f9;">Observability & Support</h3>
-          <div style="display:flex; flex-wrap:wrap; gap:10px;">
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Logs</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Metrics</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Grafana</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Wireshark</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">pcap</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">tcpdump</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">strace</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Production Alerts</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">RCA</span>
-          </div>
-        </div>
-
-        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
-          <div style="font-size:24px;">⚙️</div>
-          <h3 style="margin:12px 0 10px 0; color:#a7f3d0;">DevOps & Tooling</h3>
-          <div style="display:flex; flex-wrap:wrap; gap:10px;">
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Docker</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Linux</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Ubuntu</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Git</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Jenkins</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">CI/CD Pipelines</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Nginx</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">APISIX</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Route Configuration</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Keycloak</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Build Scripts</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Project Manifest</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Repo Sync</span>
-          </div>
-        </div>
-
-        <div style="padding:22px; border-radius:24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06);">
-          <div style="font-size:24px;">🧠</div>
-          <h3 style="margin:12px 0 10px 0; color:#fca5a5;">Emerging Practices</h3>
-          <div style="display:flex; flex-wrap:wrap; gap:10px;">
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Prompt Engineering</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">ML</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">AI</span>
-            <span style="background:#111827; padding:8px 12px; border-radius:999px;">Cross Device UX</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" style="margin-top:28px;">
-      <div style="border-radius:28px; padding:30px; background:linear-gradient(180deg, rgba(12,18,30,0.96), rgba(11,17,29,0.88)); border:1px solid rgba(255,255,255,0.07);">
-        <h2 style="margin:0 0 16px 0; color:#ffffff; font-size:clamp(26px, 4vw, 30px);">Engineering Experience</h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-top:16px;">
-          <div style="padding:16px 18px; border-radius:18px; background:rgba(255,255,255,0.04); color:#dbeafe; line-height:1.8;">Used ideas from distributed computing, large-scale design, real-time processing, storage, ML, and AI to solve challenging problems.</div>
-          <div style="padding:16px 18px; border-radius:18px; background:rgba(255,255,255,0.04); color:#dbeafe; line-height:1.8;">Worked closely with core technology teams and platform teams to balance cross-platform consistency and product execution.</div>
-          <div style="padding:16px 18px; border-radius:18px; background:rgba(255,255,255,0.04); color:#dbeafe; line-height:1.8;">Developed solutions as a PaaS and SaaS engineer with platform-driven innovation at the center.</div>
-          <div style="padding:16px 18px; border-radius:18px; background:rgba(255,255,255,0.04); color:#dbeafe; line-height:1.8;">Comfortable with networking fundamentals critical to modern distributed applications.</div>
-          <div style="padding:16px 18px; border-radius:18px; background:rgba(255,255,255,0.04); color:#dbeafe; line-height:1.8;">Regular Jira user in Agile workflows with story points, sprint delivery, and collaboration rituals.</div>
-          <div style="padding:16px 18px; border-radius:18px; background:rgba(255,255,255,0.04); color:#dbeafe; line-height:1.8;">Worked closely with QA on test plans and with DevOps on migration and rollout readiness.</div>
-        </div>
-      </div>
-    </section>
-
-
-  </div>
+  <script>
+    function openProfileModal(person) {
+      const linkedin = document.getElementById('linkedinLink');
+      const facebook = document.getElementById('facebookLink');
+      const instagram = document.getElementById('instagramLink');
+      const title = document.getElementById('profileTitle');
+      if (person === 'gokul') {
+        title.innerText = "Gokul's Social Profiles";
+        linkedin.href = 'https://www.linkedin.com/in/gokul-raghu';
+        facebook.href = 'https://www.facebook.com/jokul.gokul';
+        instagram.href = 'https://www.instagram.com/gokuljokul/';
+      } else {
+        title.innerText = "Sharumathi's Social Profiles";
+        linkedin.href = 'https://www.linkedin.com/in/sharumathigobi';
+        facebook.style.display = 'none';
+        instagram.href = 'https://www.instagram.com/sharu_0010';
+      }
+      document.getElementById('profileModal').style.display = 'flex';
+    }
+    function closeProfileModal() { document.getElementById('profileModal').style.display = 'none'; }
+    window.addEventListener('click', function (e) {
+      if (e.target === document.getElementById('profileModal')) closeProfileModal();
+    });
+  </script>
 </body>
+
 </html>
