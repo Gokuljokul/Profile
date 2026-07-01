@@ -34,19 +34,21 @@
     }
 
     /* Parallax Background - Traditional Hindu Gopuram */
-    .bg-hero {
-      background-image: linear-gradient(rgba(128, 0, 32, 0.85), rgba(40, 0, 10, 0.92)), url('https://unsplash.com');
-      background-attachment: fixed;
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-size: cover;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+.bg-hero {
+    background:
+        linear-gradient(rgba(55,0,0,0.78), rgba(25,0,0,0.88)),
+        url("https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=1800&q=80");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
 
     /* Traditional Borders & Mandapam Styling */
     .container {
@@ -362,6 +364,34 @@
       width: 28px;
       height: 28px;
     }
+
+    /* Floating Flower Petals */
+    .petal {
+      position: fixed;
+      top: -50px;
+      font-size: 22px;
+      pointer-events: none;
+      user-select: none;
+      z-index: 9999;
+      animation: fall linear forwards;
+      opacity: 0.9;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(110vh) translateX(120px) rotate(720deg);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 
@@ -394,7 +424,8 @@
         <div class="date">Sunday, September 13, 2026</div>
         <div class="time">06:00 AM - 07:30 AM (Muhurtham)</div>
         <div class="venue" style="margin-top: 20px; font-weight: bold; color: var(--gold);">
-          <h3 class="script"><button class="profile-btn" onclick="openLocation('location')">📍 Narpavi Arangam</button></h3>
+          <h3 class="script"><button class="profile-btn" onclick="openLocation('location')">📍 Narpavi Arangam</button>
+          </h3>
         </div>
         <div class="location-sub">Karivalam Vandanalur, Sankarankovil, Tenkasi District, Tamil Nadu</div>
       </div>
@@ -522,6 +553,28 @@
     window.addEventListener('click', function (e) {
       if (e.target === document.getElementById('profileModal')) closeProfileModal();
     });
+  </script>
+  <script>
+    const petals = ["🌸", "🌺", "🌼", "💮", "🌷"];
+
+    function createPetal() {
+      const petal = document.createElement("div");
+      petal.className = "petal";
+      petal.innerHTML = petals[Math.floor(Math.random() * petals.length)];
+
+      petal.style.left = Math.random() * window.innerWidth + "px";
+      petal.style.fontSize = (18 + Math.random() * 20) + "px";
+      petal.style.animationDuration = (6 + Math.random() * 6) + "s";
+
+      document.body.appendChild(petal);
+
+      petal.addEventListener("animationend", () => {
+        petal.remove();
+      });
+    }
+
+    // Create petals continuously
+    setInterval(createPetal, 500);
   </script>
 </body>
 
