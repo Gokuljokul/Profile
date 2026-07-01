@@ -346,6 +346,156 @@
       transform: scale(1.05);
     }
 
+    .degree-initial {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+      margin-right: 1px;
+    }
+
+    .degree-initial::before {
+      content: "🎓";
+      position: absolute;
+      top: -0.68em;
+      left: -0.06em;
+      font-size: 0.42em;
+      transform: rotate(-12deg);
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
+      pointer-events: none;
+    }
+
+    .phd-initial {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+      margin-right: 1px;
+      color: #ffe2a0;
+      font-weight: 700;
+    }
+
+    .phd-initial::before {
+      content: "🎓";
+      position: absolute;
+      top: -0.82em;
+      left: -0.08em;
+      font-size: 0.95em;
+      transform: rotate(-10deg);
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
+      pointer-events: none;
+    }
+
+    .phd-initial::after {
+      content: "PhD";
+      position: absolute;
+      top: -1.45em;
+      right: -1.3em;
+      font-size: 0.42em;
+      font-family: 'Marcellus', serif;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+      pointer-events: none;
+    }
+
+    .eng-initial {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+      margin-right: 1px;
+      color: #ffe2a0;
+      font-weight: 700;
+    }
+
+    .eng-initial::before {
+      content: "⛑️";
+      position: absolute;
+      top: -0.9em;
+      left: -0.06em;
+      font-size: 0.9em;
+      transform: rotate(-10deg);
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
+      pointer-events: none;
+    }
+
+    .eng-initial::after {
+      content: "Eng";
+      position: absolute;
+      top: -1.5em;
+      right: -1.35em;
+      font-size: 0.42em;
+      font-family: 'Marcellus', serif;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+      pointer-events: none;
+    }
+
+    .pharm-initial {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+      margin-right: 1px;
+      color: #ffe2a0;
+      font-weight: 700;
+    }
+
+    .pharm-initial::before {
+      content: "💊";
+      position: absolute;
+      top: -0.82em;
+      left: -0.05em;
+      font-size: 0.85em;
+      transform: rotate(-12deg);
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
+      pointer-events: none;
+    }
+
+    .pharm-initial::after {
+      content: "D.Pharm";
+      position: absolute;
+      top: -1.5em;
+      right: -2.25em;
+      font-size: 0.38em;
+      font-family: 'Marcellus', serif;
+      color: var(--gold);
+      letter-spacing: 0.4px;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+      pointer-events: none;
+    }
+
+    .astro-initial {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+      margin-right: 1px;
+      color: #ffe2a0;
+      font-weight: 700;
+    }
+
+    .astro-initial::before {
+      content: "🔮";
+      position: absolute;
+      top: -0.84em;
+      left: -0.08em;
+      font-size: 0.86em;
+      transform: rotate(-10deg);
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
+      pointer-events: none;
+    }
+
+    .astro-initial::after {
+      content: "Astro";
+      position: absolute;
+      top: -1.52em;
+      right: -1.95em;
+      font-size: 0.38em;
+      font-family: 'Marcellus', serif;
+      color: var(--gold);
+      letter-spacing: 0.4px;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+      pointer-events: none;
+    }
+
     .social-icons {
       display: flex;
       justify-content: center;
@@ -623,16 +773,16 @@
 
       <!-- Groom Details -->
       <div style="margin-top: 30px;">
-        <h1 class="script"><button class="profile-btn" onclick="openProfileModal('gokul')">Gokul</button></h1>
-        <p class="parents">Son of Mr. Raghu & Mrs. Santhanalakshmi</p>
+        <h1 class="script"><button class="profile-btn" onclick="openProfileModal('gokul')"><span class="degree-initial">G</span>okul</button></h1>
+        <p class="parents">Son of Mr. <span class="eng-initial">R</span>aghu & Mrs. <span class="astro-initial">S</span>anthanalakshmi</p>
       </div>
 
       <div class="and">with</div>
 
       <!-- Bride Details -->
       <div>
-        <h1 class="script"><button class="profile-btn" onclick="openProfileModal('sharumathi')">Sharumathi</button></h1>
-        <p class="parents">Daughter of Mr. Gobi & Mrs. Lalitha</p>
+        <h1 class="script"><button class="profile-btn" onclick="openProfileModal('sharumathi')"><span class="degree-initial">S</span>harumathi</button></h1>
+        <p class="parents">Daughter of Mr. <span class="pharm-initial">G</span>obi & Mrs. <span class="phd-initial">L</span>alitha</p>
       </div>
 
       <!-- Event Details -->
