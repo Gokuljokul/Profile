@@ -221,13 +221,22 @@
       background: var(--maroon);
       border: 3px solid var(--gold);
       border-radius: 15px;
-      width: 95%;
-      max-width: 900px;
-      height: 90vh;
+      width: 92%;
+      max-width: 560px;
+      height: auto;
       padding: 20px;
       color: var(--cream);
       position: relative;
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    }
+    .modal-rsvp .modal-content {
+      width: 95%;
+      max-width: 900px;
+      height: 90vh;
+    }
+    .modal-profile .modal-content {
+      max-width: 520px;
+      min-height: 220px;
     }
 
     .close-btn {
@@ -394,8 +403,9 @@
     }
 
     .travel-section {
-      max-width: 1100px;
-      margin: 40px auto 70px;
+      width: 100%;
+      max-width: 100%;
+      margin: 36px 0 0;
       padding: 30px 20px;
       border: 2px solid var(--gold);
       border-radius: 18px;
@@ -652,13 +662,6 @@
           <div class="time-label">Seconds</div>
         </div>
       </div>
-      <!-- Action Buttons -->
-      <div class="btn-group">
-        <button class="btn" onclick="openRSVPModal()">RSVP Now</button>
-      </div>
-    </div>
-  </div>
-
   <section class="travel-section">
     <h2 class="travel-title">Travel Explorer from Sankarankovil</h2>
 
@@ -753,10 +756,17 @@
       <div class="tour-stop"><strong>Sankarankovil, Alangulam, Ambasamudram</strong><span>Scenic detour towards Papanasam and KMTR.</span></div>
       <div class="tour-stop"><strong>Ambasamudram to Papanasam / KMTR</strong><span>Nature route via hills, dams, and reserve forest.</span></div>
     </div>
+
+    <div class="btn-group">
+      <button class="btn" onclick="openRSVPModal()">RSVP Now</button>
+    </div>
   </section>
 
+    </div>
+  </div>
+
   <!-- RSVP Modal -->
-  <div id="rsvpModal" class="modal">
+  <div id="rsvpModal" class="modal modal-rsvp">
     <div class="modal-content">
       <span class="close-btn" onclick="closeRSVPModal()">&times;</span>
       <h2 style="color: var(--gold); margin-bottom: 20px;">RSVP for the Wedding</h2>
@@ -922,14 +932,14 @@
     function closeRSVPModal() {
       document.getElementById('rsvpModal').style.display = 'none';
     }
-    window.onclick = function (event) {
-      if (event.target == document.getElementById('rsvpModal')) {
+    document.getElementById('rsvpModal').addEventListener('click', function (event) {
+      if (event.target === this) {
         closeRSVPModal();
       }
-    }
+    });
   </script>
 
-  <div id="profileModal" class="modal">
+  <div id="profileModal" class="modal modal-profile">
     <div class="modal-content">
       <span class="close-btn" onclick="closeProfileModal()">&times;</span>
       <h2 id="profileTitle" style="color: var(--gold); margin-bottom:20px;">Social Profiles</h2>
@@ -963,6 +973,7 @@
       if (person === 'gokul') {
         title.innerText = "Gokul's Social Profiles";
         linkedin.href = 'https://www.linkedin.com/in/gokul-raghu';
+        facebook.style.display = 'flex';
         facebook.href = 'https://www.facebook.com/jokul.gokul';
         instagram.href = 'https://www.instagram.com/gokuljokul/';
       } else {
@@ -974,8 +985,10 @@
       document.getElementById('profileModal').style.display = 'flex';
     }
     function closeProfileModal() { document.getElementById('profileModal').style.display = 'none'; }
-    window.addEventListener('click', function (e) {
-      if (e.target === document.getElementById('profileModal')) closeProfileModal();
+    document.getElementById('profileModal').addEventListener('click', function (event) {
+      if (event.target === this) {
+        closeProfileModal();
+      }
     });
   </script>
   <script>
