@@ -394,9 +394,9 @@
         <div class="date">Sunday, September 13, 2026</div>
         <div class="time">06:00 AM - 07:30 AM (Muhurtham)</div>
         <div class="venue" style="margin-top: 20px; font-weight: bold; color: var(--gold);">
-          📍 Narpavi Arangam
+          <h3 class="script"><button class="profile-btn" onclick="openLocation('location')">📍 Narpavi Arangam</button></h3>
         </div>
-        <div class="location-sub">Sankarankovil, Tenkasi District, Tamil Nadu</div>
+        <div class="location-sub">Karivalam Vandanalur, Sankarankovil, Tenkasi District, Tamil Nadu</div>
       </div>
 
       <!-- Countdown Timer Component -->
@@ -490,6 +490,16 @@
   </div>
 
   <script>
+
+    function openLocation(location) {
+      //https://maps.app.goo.gl/ZD1x91pqNtaJ134T7
+      if (location === 'location') {
+        window.open('https://maps.app.goo.gl/ZD1x91pqNtaJ134T7', '_blank');
+      }
+
+    }
+
+
     function openProfileModal(person) {
       const linkedin = document.getElementById('linkedinLink');
       const facebook = document.getElementById('facebookLink');
