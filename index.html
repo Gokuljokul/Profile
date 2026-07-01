@@ -392,6 +392,212 @@
         opacity: 0;
       }
     }
+
+    .travel-section {
+      max-width: 1100px;
+      margin: 40px auto 70px;
+      padding: 30px 20px;
+      border: 2px solid var(--gold);
+      border-radius: 18px;
+      background: rgba(34, 0, 12, 0.7);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .travel-title {
+      font-family: 'Cinzel Decorative', serif;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+      font-size: 1.6rem;
+    }
+
+    .travel-top {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .info-card {
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 12px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      text-align: left;
+    }
+
+    .info-card h3 {
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+    }
+
+    .weather-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 0.95rem;
+      color: #f4e6d5;
+    }
+
+    .music-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .music-btn {
+      border: none;
+      border-radius: 30px;
+      padding: 10px 18px;
+      background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+      color: var(--maroon);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .music-controls input[type="range"] {
+      width: 170px;
+      accent-color: var(--gold);
+    }
+
+    .music-status {
+      font-size: 0.9rem;
+      color: #ead9c7;
+      margin-top: 8px;
+      min-height: 18px;
+    }
+
+    .map-stage {
+      margin-top: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(130, 21, 42, 0.55), rgba(20, 0, 8, 0.75));
+      padding: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .route-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .road {
+      fill: none;
+      stroke: rgba(255, 221, 151, 0.9);
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 8 8;
+      animation: roadMove 2s linear infinite;
+    }
+
+    .branch-road {
+      stroke: rgba(255, 194, 123, 0.7);
+      stroke-width: 4;
+      fill: none;
+      stroke-dasharray: 6 8;
+      animation: roadMove 2.5s linear infinite;
+    }
+
+    .node {
+      fill: #fff;
+      stroke: var(--gold);
+      stroke-width: 3;
+      transition: transform 0.3s ease, fill 0.3s ease;
+      transform-origin: center;
+    }
+
+    .node.active {
+      fill: #ffe08a;
+      transform: scale(1.18);
+      filter: drop-shadow(0 0 10px rgba(255, 220, 133, 0.9));
+    }
+
+    .map-label {
+      fill: #fff7e5;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+
+    .distance-label {
+      fill: #ffd87b;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    .car-marker {
+      position: absolute;
+      font-size: 24px;
+      transform: translate(-50%, -58%);
+      pointer-events: none;
+      filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.45));
+      z-index: 3;
+    }
+
+    .stop-highlight {
+      margin-top: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 10px;
+      text-align: left;
+      color: #f4e6d5;
+      font-size: 0.95rem;
+    }
+
+    .tourist-list {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .tour-stop {
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 12px;
+      text-align: left;
+    }
+
+    .tour-stop strong {
+      color: #ffe2a0;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .tour-stop span {
+      color: #f3e7d8;
+      font-size: 0.9rem;
+      display: block;
+      line-height: 1.4;
+    }
+
+    @keyframes roadMove {
+      to {
+        stroke-dashoffset: -32;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .travel-top,
+      .tourist-list {
+        grid-template-columns: 1fr;
+      }
+
+      .map-label {
+        font-size: 13px;
+      }
+
+      .distance-label {
+        font-size: 11px;
+      }
+    }
   </style>
 </head>
 
@@ -452,6 +658,103 @@
       </div>
     </div>
   </div>
+
+  <section class="travel-section">
+    <h2 class="travel-title">Travel Explorer from Sankarankovil</h2>
+
+    <div class="travel-top">
+      <div class="info-card">
+        <h3>Live Weather in Tenkasi</h3>
+        <div class="weather-grid" id="tenkasiWeather">
+          <div>Condition: <span id="weatherCondition">Loading...</span></div>
+          <div>Temperature: <span id="weatherTemp">--</span></div>
+          <div>Wind: <span id="weatherWind">--</span></div>
+          <div>Updated: <span id="weatherTime">--</span></div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>Nadaswaram Background Music</h3>
+        <div class="music-controls">
+          <button id="musicToggleBtn" class="music-btn">Play</button>
+          <label for="musicVolume">Volume</label>
+          <input id="musicVolume" type="range" min="0" max="1" step="0.1" value="0.7">
+        </div>
+        <div class="music-status" id="musicStatus">Optional music is ready. Click Play.</div>
+        <audio id="nadaswaramAudio" loop preload="none">
+          <source src="music/nadaswaram.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+
+    <div class="map-stage">
+      <div id="carMarker" class="car-marker">🚗</div>
+      <svg class="route-svg" id="routeSvg" viewBox="0 0 960 650" role="img" aria-label="Tourist route map from Sankarankovil">
+        <path id="mainRoute" class="road" d="M120 80 L120 220 L360 220 L360 350 L360 500 L540 500 L540 590" />
+        <path class="branch-road" d="M120 80 L250 80 L250 220 L360 220" />
+        <path class="branch-road" d="M120 80 L250 80 L250 320" />
+        <path class="branch-road" d="M360 350 L360 220 L250 220" />
+        <path class="branch-road" d="M360 350 L430 350" />
+        <path class="branch-road" d="M120 80 L80 170 L80 260 L80 360" />
+        <path class="branch-road" d="M120 80 L190 145 L260 220" />
+        <path class="branch-road" d="M260 220 L340 275" />
+
+        <circle class="node" id="node-sankarankovil" cx="120" cy="80" r="9" />
+        <circle class="node" id="node-tenkasi" cx="120" cy="220" r="9" />
+        <circle class="node" id="node-sengottai" cx="360" cy="350" r="9" />
+        <circle class="node" id="node-kottavasal" cx="360" cy="500" r="9" />
+        <circle class="node" id="node-rajathottam" cx="540" cy="500" r="9" />
+        <circle class="node" id="node-thenmala" cx="540" cy="590" r="9" />
+        <circle class="node" id="node-courtallam" cx="250" cy="220" r="7" />
+        <circle class="node" id="node-panpoli" cx="250" cy="320" r="7" />
+        <circle class="node" id="node-gundar" cx="430" cy="350" r="7" />
+        <circle class="node" id="node-alangulam" cx="80" cy="170" r="7" />
+        <circle class="node" id="node-ambasamudram" cx="80" cy="260" r="7" />
+        <circle class="node" id="node-papanasam" cx="80" cy="360" r="7" />
+        <circle class="node" id="node-kmtr" cx="340" cy="275" r="7" />
+
+        <text class="map-label" x="20" y="72">Sankarankovil</text>
+        <text class="map-label" x="26" y="242">Tenkasi</text>
+        <text class="map-label" x="372" y="346">Sengottai</text>
+        <text class="map-label" x="372" y="524">Kottavasal</text>
+        <text class="map-label" x="552" y="494">Rajathottam</text>
+        <text class="map-label" x="552" y="612">Thenmala (Kerala)</text>
+        <text class="map-label" x="262" y="216">Courtallam</text>
+        <text class="map-label" x="262" y="317">Panpoli Temple</text>
+        <text class="map-label" x="442" y="347">Gundar Falls</text>
+        <text class="map-label" x="12" y="165">Alangulam</text>
+        <text class="map-label" x="12" y="258">Ambasamudram</text>
+        <text class="map-label" x="12" y="380">Papanasam</text>
+        <text class="map-label" x="350" y="271">KMTR</text>
+
+        <text class="distance-label" x="130" y="150">43 km | 1 hr 5 min</text>
+        <text class="distance-label" x="185" y="205">7 km | 15 min</text>
+        <text class="distance-label" x="185" y="270">15 km | 30 min</text>
+        <text class="distance-label" x="220" y="325">25 km | 45 min</text>
+        <text class="distance-label" x="370" y="430">18 km | 35 min</text>
+        <text class="distance-label" x="442" y="488">18 km | 35 min</text>
+        <text class="distance-label" x="548" y="548">12 km | 25 min</text>
+      </svg>
+
+      <div class="stop-highlight" id="activeStopInfo">
+        Current stop: Sankarankovil | Distance to next: 43 km | ETA: 1 hr 5 min
+      </div>
+    </div>
+
+    <div class="tourist-list">
+      <div class="tour-stop"><strong>Sankarankovil to Tenkasi</strong><span>43 km | Approx. 1 hr 5 min</span></div>
+      <div class="tour-stop"><strong>Tenkasi to Courtallam</strong><span>7 km | Approx. 15 min</span></div>
+      <div class="tour-stop"><strong>Tenkasi to Panpoli Temple</strong><span>15 km | Approx. 30 min</span></div>
+      <div class="tour-stop"><strong>Tenkasi to Sengottai</strong><span>25 km | Approx. 45 min</span></div>
+      <div class="tour-stop"><strong>Sengottai to Kottavasal</strong><span>18 km | Approx. 35 min</span></div>
+      <div class="tour-stop"><strong>Sengottai to Gundar Falls</strong><span>15 km | Approx. 30 min</span></div>
+      <div class="tour-stop"><strong>Kottavasal to Rajathottam</strong><span>18 km | Approx. 35 min</span></div>
+      <div class="tour-stop"><strong>Rajathottam to Thenmala</strong><span>12 km | Approx. 25 min</span></div>
+      <div class="tour-stop"><strong>Sankarankovil, Alangulam, Ambasamudram</strong><span>Scenic detour towards Papanasam and KMTR.</span></div>
+      <div class="tour-stop"><strong>Ambasamudram to Papanasam / KMTR</strong><span>Nature route via hills, dams, and reserve forest.</span></div>
+    </div>
+  </section>
+
   <!-- RSVP Modal -->
   <div id="rsvpModal" class="modal">
     <div class="modal-content">
@@ -470,6 +773,127 @@
     </div>
   </div>
   <script>
+    const weatherCodeMap = {
+      0: 'Clear sky',
+      1: 'Mostly clear',
+      2: 'Partly cloudy',
+      3: 'Cloudy',
+      45: 'Fog',
+      48: 'Fog',
+      51: 'Light drizzle',
+      53: 'Drizzle',
+      55: 'Heavy drizzle',
+      61: 'Light rain',
+      63: 'Rain',
+      65: 'Heavy rain',
+      80: 'Rain showers',
+      95: 'Thunderstorm'
+    };
+
+    async function loadTenkasiWeather() {
+      const url = 'https://api.open-meteo.com/v1/forecast?latitude=8.9598&longitude=77.3152&current=temperature_2m,weather_code,wind_speed_10m&timezone=Asia%2FKolkata';
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const current = data.current;
+
+        document.getElementById('weatherCondition').innerText = weatherCodeMap[current.weather_code] || 'Live update';
+        document.getElementById('weatherTemp').innerText = `${current.temperature_2m} ${data.current_units.temperature_2m}`;
+        document.getElementById('weatherWind').innerText = `${current.wind_speed_10m} ${data.current_units.wind_speed_10m}`;
+
+        const localTime = new Date(current.time).toLocaleTimeString('en-IN', {
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        document.getElementById('weatherTime').innerText = localTime;
+      } catch (error) {
+        document.getElementById('weatherCondition').innerText = 'Unavailable';
+        document.getElementById('weatherTemp').innerText = 'Try again';
+        document.getElementById('weatherWind').innerText = 'Try again';
+        document.getElementById('weatherTime').innerText = 'Offline';
+      }
+    }
+
+    const nadaswaramAudio = document.getElementById('nadaswaramAudio');
+    const musicToggleBtn = document.getElementById('musicToggleBtn');
+    const musicVolume = document.getElementById('musicVolume');
+    const musicStatus = document.getElementById('musicStatus');
+
+    musicVolume.addEventListener('input', function () {
+      nadaswaramAudio.volume = Number(this.value);
+    });
+
+    musicToggleBtn.addEventListener('click', async function () {
+      try {
+        if (nadaswaramAudio.paused) {
+          await nadaswaramAudio.play();
+          musicToggleBtn.innerText = 'Pause';
+          musicStatus.innerText = 'Playing Nadaswaram background music.';
+        } else {
+          nadaswaramAudio.pause();
+          musicToggleBtn.innerText = 'Play';
+          musicStatus.innerText = 'Music paused.';
+        }
+      } catch (error) {
+        musicStatus.innerText = 'Add your music file at music/nadaswaram.mp3 to enable playback.';
+      }
+    });
+
+    const stopSequence = [
+      { nodeId: 'node-sankarankovil', name: 'Sankarankovil', nextDistance: '43 km', eta: '1 hr 5 min' },
+      { nodeId: 'node-tenkasi', name: 'Tenkasi', nextDistance: '7 km', eta: '15 min (Courtallam)' },
+      { nodeId: 'node-courtallam', name: 'Courtallam', nextDistance: '15 km', eta: '30 min (Panpoli Temple)' },
+      { nodeId: 'node-panpoli', name: 'Panpoli Temple', nextDistance: '25 km', eta: '45 min (Sengottai)' },
+      { nodeId: 'node-sengottai', name: 'Sengottai', nextDistance: '18 km', eta: '35 min (Kottavasal)' },
+      { nodeId: 'node-kottavasal', name: 'Kottavasal', nextDistance: '18 km', eta: '35 min (Rajathottam)' },
+      { nodeId: 'node-rajathottam', name: 'Rajathottam', nextDistance: '12 km', eta: '25 min (Thenmala)' },
+      { nodeId: 'node-thenmala', name: 'Thenmala (Kerala)', nextDistance: '-', eta: 'Journey complete' }
+    ];
+
+    function animateRouteCar() {
+      const mainRoute = document.getElementById('mainRoute');
+      const routeSvg = document.getElementById('routeSvg');
+      const carMarker = document.getElementById('carMarker');
+      const activeStopInfo = document.getElementById('activeStopInfo');
+      const totalLength = mainRoute.getTotalLength();
+
+      let progress = 0;
+      let stopIndex = 0;
+
+      setInterval(() => {
+        progress = (progress + 2) % 1000;
+        const point = mainRoute.getPointAtLength((progress / 1000) * totalLength);
+        const viewBox = routeSvg.viewBox.baseVal;
+        const scaleX = routeSvg.clientWidth / viewBox.width;
+        const scaleY = routeSvg.clientHeight / viewBox.height;
+
+        carMarker.style.left = `${14 + point.x * scaleX}px`;
+        carMarker.style.top = `${14 + point.y * scaleY}px`;
+      }, 45);
+
+      setInterval(() => {
+        stopSequence.forEach(stop => {
+          const node = document.getElementById(stop.nodeId);
+          if (node) {
+            node.classList.remove('active');
+          }
+        });
+
+        const currentStop = stopSequence[stopIndex];
+        const node = document.getElementById(currentStop.nodeId);
+        if (node) {
+          node.classList.add('active');
+        }
+
+        activeStopInfo.innerText = `Current stop: ${currentStop.name} | Distance to next: ${currentStop.nextDistance} | ETA: ${currentStop.eta}`;
+        stopIndex = (stopIndex + 1) % stopSequence.length;
+      }, 3200);
+    }
+
+    loadTenkasiWeather();
+    setInterval(loadTenkasiWeather, 300000);
+    animateRouteCar();
+
     // Countdown Timer Logic
     const countdownDate = new Date("September 13, 2026 06:00:00").getTime();
     const countdownFunction = setInterval(() => {
