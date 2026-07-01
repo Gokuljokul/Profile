@@ -346,6 +346,45 @@
       transform: scale(1.05);
     }
 
+    .clickable-btn {
+      border-bottom: 1px dashed rgba(212, 175, 55, 0.85);
+      padding-bottom: 2px;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .clickable-btn::after {
+      content: "↗";
+      font-size: 0.65em;
+      color: var(--gold);
+      opacity: 0.95;
+      transform: translateY(-2px);
+    }
+
+    .clickable-btn:hover,
+    .clickable-btn:focus-visible {
+      border-bottom-color: #fff;
+      text-shadow: 0 0 9px rgba(255, 223, 158, 0.8);
+      outline: none;
+    }
+
+    .click-hint {
+      margin-top: 8px;
+      font-size: 0.86rem;
+      color: #f1dcbf;
+      letter-spacing: 0.3px;
+      font-style: italic;
+    }
+
+    .location-hint {
+      margin-top: 6px;
+      color: #f1dcbf;
+      font-size: 0.84rem;
+      letter-spacing: 0.3px;
+    }
+
     .degree-initial {
       position: relative;
       display: inline-block;
@@ -770,10 +809,11 @@
       <p style="margin-top: 20px; font-style: italic; color: #ddd;">
         We cordially invite you and your family to celebrate the auspicious occasion of the marriage of
       </p>
+      <p class="click-hint">Tap bride/groom names to view profiles and tap venue to open directions.</p>
 
       <!-- Groom Details -->
       <div style="margin-top: 30px;">
-        <h1 class="script"><button class="profile-btn" onclick="openProfileModal('gokul')"><span class="degree-initial">G</span>okul</button></h1>
+        <h1 class="script"><button class="profile-btn clickable-btn" onclick="openProfileModal('gokul')" title="Open groom profile"><span class="degree-initial">G</span>okul</button></h1>
         <p class="parents">Son of Mr. <span class="eng-initial">R</span>aghu & Mrs. <span class="astro-initial">S</span>anthanalakshmi</p>
       </div>
 
@@ -781,7 +821,7 @@
 
       <!-- Bride Details -->
       <div>
-        <h1 class="script"><button class="profile-btn" onclick="openProfileModal('sharumathi')"><span class="degree-initial">S</span>harumathi</button></h1>
+        <h1 class="script"><button class="profile-btn clickable-btn" onclick="openProfileModal('sharumathi')" title="Open bride profile"><span class="degree-initial">S</span>harumathi</button></h1>
         <p class="parents">Daughter of Mr. <span class="pharm-initial">G</span>obi & Mrs. <span class="phd-initial">L</span>alitha</p>
       </div>
 
@@ -790,9 +830,10 @@
         <div class="date">Sunday, September 13, 2026</div>
         <div class="time">06:00 AM - 07:30 AM (Muhurtham)</div>
         <div class="venue" style="margin-top: 20px; font-weight: bold; color: var(--gold);">
-          <h3 class="script"><button class="profile-btn" onclick="openLocation('location')">📍 Narpavi Arangam</button>
+          <h3 class="script"><button class="profile-btn clickable-btn" onclick="openLocation('location')" title="Open venue location in maps">📍 Narpavi Arangam</button>
           </h3>
         </div>
+        <div class="location-hint">Click venue name for map navigation.</div>
         <div class="location-sub">Karivalam Vandanalur, Sankarankovil, Tenkasi District, Tamil Nadu</div>
       </div>
 
