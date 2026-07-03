@@ -176,6 +176,56 @@
       align-items: center;
     }
 
+    .post-event-message {
+      display: none;
+      margin-top: 16px;
+      border: 1px solid rgba(212, 175, 55, 0.65);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px;
+      color: #ffe8c5;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .post-event-message h4 {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 1.05rem;
+      letter-spacing: 0.4px;
+    }
+
+    .album-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 229, 170, 0.9);
+      color: #fff6de;
+      text-decoration: none;
+      font-weight: 700;
+      background: rgba(212, 175, 55, 0.22);
+      box-shadow: 0 0 0 rgba(255, 214, 138, 0.1);
+      animation: albumPulse 1.8s ease-in-out infinite;
+    }
+
+    .album-link:hover {
+      background: rgba(212, 175, 55, 0.36);
+    }
+
+    @keyframes albumPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 214, 138, 0.52);
+      }
+
+      70% {
+        box-shadow: 0 0 0 14px rgba(255, 214, 138, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 214, 138, 0);
+      }
+    }
+
     .btn {
       background: linear-gradient(135deg, var(--gold), var(--dark-gold));
       color: var(--maroon);
@@ -809,11 +859,11 @@
       <p style="margin-top: 20px; font-style: italic; color: #ddd;">
         We cordially invite you and your family to celebrate the auspicious occasion of the marriage of
       </p>
-      <p class="click-hint">Tap bride/groom names to view profiles and tap venue to open directions.</p>
+      
 
       <!-- Groom Details -->
       <div style="margin-top: 30px;">
-        <h1 class="script"><button class="profile-btn clickable-btn" onclick="openProfileModal('gokul')" title="Open groom profile"><span class="degree-initial">G</span>okul</button></h1>
+        <h1 class="script"><button class="profile-btn clickable-btn" onclick="openProfileModal('gokul')" title="Open groom profile"><span class="degree-initial">Gokul</span></button></h1>
         <p class="parents">Son of Mr. <span class="eng-initial">R</span>aghu & Mrs. <span class="astro-initial">S</span>anthanalakshmi</p>
       </div>
 
@@ -821,8 +871,8 @@
 
       <!-- Bride Details -->
       <div>
-        <h1 class="script"><button class="profile-btn clickable-btn" onclick="openProfileModal('sharumathi')" title="Open bride profile"><span class="degree-initial">S</span>harumathi</button></h1>
-        <p class="parents">Daughter of Mr. <span class="pharm-initial">G</span>obi & Mrs. <span class="phd-initial">L</span>alitha</p>
+        <h1 class="script"><button class="profile-btn clickable-btn" onclick="openProfileModal('sharumathi')" title="Open bride profile"><span class="degree-initial">Sharumathi</span></button></h1>
+        <p class="parents">Daughter of Mr. <span class="pharm-initial">Gobi</span>& Mrs. <span class="phd-initial">L</span>alitha</p>
       </div>
 
       <!-- Event Details -->
@@ -833,7 +883,6 @@
           <h3 class="script"><button class="profile-btn clickable-btn" onclick="openLocation('location')" title="Open venue location in maps">📍 Narpavi Arangam</button>
           </h3>
         </div>
-        <div class="location-hint">Click venue name for map navigation.</div>
         <div class="location-sub">Karivalam Vandanalur, Sankarankovil, Tenkasi District, Tamil Nadu</div>
       </div>
 
@@ -950,6 +999,12 @@
 
     <div class="btn-group">
       <button class="btn" onclick="openRSVPModal()">RSVP Now</button>
+    </div>
+
+    <div class="post-event-message" id="postEventMessage">
+      <h4>Thank You For Celebrating With Us</h4>
+      <p>We are deeply grateful for your love, blessings, and presence on our wedding day.</p>
+      <a class="album-link" id="photoAlbumLink" href="https://photos.google.com/" target="_blank" rel="noopener noreferrer">View Wedding Photo Album</a>
     </div>
   </section>
 
@@ -1097,6 +1152,22 @@
 
     // Countdown Timer Logic
     const countdownDate = new Date("September 13, 2026 06:00:00").getTime();
+
+    function activatePostWeddingState() {
+      const rsvpBlock = document.querySelector('.btn-group');
+      const postEventMessage = document.getElementById('postEventMessage');
+
+      if (rsvpBlock) {
+        rsvpBlock.style.display = 'none';
+      }
+
+      if (postEventMessage) {
+        postEventMessage.style.display = 'block';
+      }
+
+      document.getElementById('countdown').innerHTML = "<div style='color: var(--gold); font-size:1.2rem;'>Wedding completed. Thank you for your warm wishes!</div>";
+    }
+
     const countdownFunction = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
@@ -1113,9 +1184,14 @@
 
       if (distance < 0) {
         clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "<div style='color: var(--gold); font-size:1.5rem;'>The auspicious moment has arrived!</div>";
+        activatePostWeddingState();
       }
     }, 1000);
+
+    if (new Date().getTime() > countdownDate) {
+      clearInterval(countdownFunction);
+      activatePostWeddingState();
+    }
 
     function openRSVPModal() {
       document.getElementById('rsvpModal').style.display = 'flex';
