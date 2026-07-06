@@ -5,12 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Invitation: Gokul & Sharumathi</title>
-  <!-- Google Fonts for Traditional & Elegant Typography -->
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link
-    href="https://googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Marcellus&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Marcellus&display=swap" rel="stylesheet">
   <style>
     :root {
       --maroon: #800020;
@@ -18,39 +15,24 @@
       --cream: #FFFDD0;
       --dark-gold: #AA7C11;
     }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Marcellus', serif; background-color: var(--maroon); color: var(--cream); overflow-x: hidden; text-align: center; }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Marcellus', serif;
-      background-color: var(--maroon);
-      color: var(--cream);
-      overflow-x: hidden;
-      text-align: center;
-    }
-
-    /* Parallax Background - Traditional Hindu Gopuram */
-.bg-hero {
-    background:
+    .bg-hero {
+      background:
         linear-gradient(rgba(55,0,0,0.78), rgba(25,0,0,0.88)),
         url("https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=1800&q=80");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
 
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-}
-
-    /* Traditional Borders & Mandapam Styling */
     .container {
       max-width: 650px;
       width: 100%;
@@ -58,1228 +40,633 @@
       padding: 40px 20px;
       background: rgba(128, 0, 32, 0.6);
       border-radius: 20px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
       backdrop-filter: blur(5px);
       position: relative;
       animation: fadeIn 2s ease-in-out;
     }
 
-    /* Decorative Traditional Elements */
-    .garland {
-      font-size: 24px;
-      letter-spacing: 8px;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
+    .garland { font-size: 24px; letter-spacing: 8px; color: var(--gold); margin-bottom: 20px; }
+    .shubh { font-family: 'Cinzel Decorative', serif; color: var(--gold); font-size: 1.5rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
 
-    .shubh {
-      font-family: 'Cinzel Decorative', serif;
-      color: var(--gold);
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+    h1.script { font-family: 'Great Vibes', cursive; font-size: 4rem; color: var(--gold); margin: 15px 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
+    h2 { font-size: 2.2rem; color: #fff; letter-spacing: 2px; margin: 10px 0; }
+    .parents { font-size: 1rem; color: #f0e6d2; font-style: italic; margin-bottom: 15px; }
+    .and { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--gold); margin: 10px 0; }
 
-    h1.script {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4rem;
-      color: var(--gold);
-      margin: 15px 0;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    }
+    .details-box { border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); padding: 20px 0; margin: 30px 0; background: rgba(0,0,0,0.2); }
+    .date, .time { font-size: 1.3rem; color: var(--gold); font-weight: bold; letter-spacing: 1px; margin: 5px 0; }
+    .venue { font-size: 1.4rem; color: #fff; margin-top: 10px; }
+    .location-sub { font-size: 1rem; color: #ddd; margin-top: 5px; }
 
-    h2 {
-      font-size: 2.2rem;
-      color: #fff;
-      letter-spacing: 2px;
-      margin: 10px 0;
-    }
+    #countdown { display: flex; justify-content: center; gap: 15px; margin: 25px 0; }
+    .time-block { background: rgba(212,175,55,0.2); border: 1px solid var(--gold); padding: 10px; border-radius: 8px; min-width: 70px; }
+    .time-block span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--gold); }
+    .time-label { font-size: 0.75rem; text-transform: uppercase; color: #fff; }
 
-    .parents {
-      font-size: 1rem;
-      color: #f0e6d2;
-      font-style: italic;
-      margin-bottom: 15px;
-    }
+    .btn-group { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; align-items: center; }
+    .post-event-message { display: none; margin-top: 16px; border: 1px solid rgba(212,175,55,0.65); background: rgba(255,255,255,0.08); border-radius: 12px; padding: 14px; color: #ffe8c5; animation: fadeIn 0.8s ease; }
+    .post-event-message h4 { margin: 0 0 8px; color: var(--gold); font-size: 1.05rem; letter-spacing: 0.4px; }
 
-    .and {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
-      color: var(--gold);
-      margin: 10px 0;
-    }
+    .album-link { display: inline-block; margin-top: 10px; padding: 9px 14px; border-radius: 999px; border: 1px solid rgba(255,229,170,0.9); color: #fff6de; text-decoration: none; font-weight: 700; background: rgba(212,175,55,0.22); animation: albumPulse 1.8s ease-in-out infinite; }
+    .album-link:hover { background: rgba(212,175,55,0.36); }
+    @keyframes albumPulse { 0%{box-shadow:0 0 0 0 rgba(255,214,138,0.52)} 70%{box-shadow:0 0 0 14px rgba(255,214,138,0)} 100%{box-shadow:0 0 0 0 rgba(255,214,138,0)} }
 
-    .details-box {
-      border-top: 1px solid var(--gold);
-      border-bottom: 1px solid var(--gold);
-      padding: 20px 0;
-      margin: 30px 0;
-      background: rgba(0, 0, 0, 0.2);
-    }
+    .btn { background: linear-gradient(135deg, var(--gold), var(--dark-gold)); color: var(--maroon); border: none; padding: 12px 30px; font-size: 1rem; font-weight: bold; font-family: 'Marcellus', serif; text-transform: uppercase; border-radius: 30px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 80%; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px var(--gold); background: linear-gradient(135deg, #fff, var(--gold)); }
 
-    .date,
-    .time {
-      font-size: 1.3rem;
-      color: var(--gold);
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin: 5px 0;
-    }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
+    .modal-content { background: var(--maroon); border: 3px solid var(--gold); border-radius: 15px; width: 92%; max-width: 560px; height: auto; padding: 20px; color: var(--cream); position: relative; box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
+    .modal-rsvp .modal-content { width: 95%; max-width: 900px; height: 90vh; }
+    .modal-profile .modal-content { max-width: 520px; min-height: 220px; }
+    .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; color: var(--gold); cursor: pointer; }
 
-    .venue {
-      font-size: 1.4rem;
-      color: #fff;
-      margin-top: 10px;
-    }
-
-    .location-sub {
-      font-size: 1rem;
-      color: #ddd;
-      margin-top: 5px;
-    }
-
-    /* Countdown Timer */
-    #countdown {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 25px 0;
-    }
-
-    .time-block {
-      background: rgba(212, 175, 55, 0.2);
-      border: 1px solid var(--gold);
-      padding: 10px;
-      border-radius: 8px;
-      min-width: 70px;
-    }
-
-    .time-block span {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--gold);
-    }
-
-    .time-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      color: #fff;
-    }
-
-    /* Action Buttons */
-    .btn-group {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 30px;
-      align-items: center;
-    }
-
-    .post-event-message {
-      display: none;
-      margin-top: 16px;
-      border: 1px solid rgba(212, 175, 55, 0.65);
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 14px;
-      color: #ffe8c5;
-      animation: fadeIn 0.8s ease;
-    }
-
-    .post-event-message h4 {
-      margin: 0 0 8px;
-      color: var(--gold);
-      font-size: 1.05rem;
-      letter-spacing: 0.4px;
-    }
-
-    .album-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 229, 170, 0.9);
-      color: #fff6de;
-      text-decoration: none;
-      font-weight: 700;
-      background: rgba(212, 175, 55, 0.22);
-      box-shadow: 0 0 0 rgba(255, 214, 138, 0.1);
-      animation: albumPulse 1.8s ease-in-out infinite;
-    }
-
-    .album-link:hover {
-      background: rgba(212, 175, 55, 0.36);
-    }
-
-    @keyframes albumPulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(255, 214, 138, 0.52);
-      }
-
-      70% {
-        box-shadow: 0 0 0 14px rgba(255, 214, 138, 0);
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(255, 214, 138, 0);
-      }
-    }
-
-    .btn {
-      background: linear-gradient(135deg, var(--gold), var(--dark-gold));
-      color: var(--maroon);
-      border: none;
-      padding: 12px 30px;
-      font-size: 1rem;
-      font-weight: bold;
-      font-family: 'Marcellus', serif;
-      text-transform: uppercase;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 80%;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px var(--gold);
-      background: linear-gradient(135deg, #fff, var(--gold));
-    }
-
-    /* Interactive RSVP Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      padding: 20px;
-    }
-
-    .modal-content {
-      background: var(--maroon);
-      border: 3px solid var(--gold);
-      border-radius: 15px;
-      width: 92%;
-      max-width: 560px;
-      height: auto;
-      padding: 20px;
-      color: var(--cream);
-      position: relative;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-    }
-    .modal-rsvp .modal-content {
-      width: 95%;
-      max-width: 900px;
-      height: 90vh;
-    }
-    .modal-profile .modal-content {
-      max-width: 520px;
-      min-height: 220px;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 24px;
-      color: var(--gold);
-      cursor: pointer;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-      text-align: left;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--gold);
-      font-size: 0.95rem;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--gold);
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      border-radius: 5px;
-      font-family: 'Marcellus', serif;
-      font-size: 1rem;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #fff;
-      box-shadow: 0 0 5px var(--gold);
-    }
-
-    .form-group select option {
-      background: var(--maroon);
-      color: #fff;
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 12px;
-      background: linear-gradient(135deg, var(--gold), var(--dark-gold));
-      color: var(--maroon);
-      border: none;
-      border-radius: 25px;
-      font-weight: bold;
-      font-family: 'Marcellus', serif;
-      text-transform: uppercase;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .submit-btn:hover {
-      background: linear-gradient(135deg, #fff, var(--gold));
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
     @media (max-width: 480px) {
-      h1.script {
-        font-size: 3rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      .container {
-        padding: 25px 15px;
-      }
-
-      .btn {
-        width: 100%;
-      }
+      h1.script { font-size: 3rem; }
+      h2 { font-size: 1.8rem; }
+      .container { padding: 25px 15px; }
+      .btn { width: 100%; }
     }
 
-    .profile-btn {
-      background: none;
-      border: none;
-      color: inherit;
-      font: inherit;
-      cursor: pointer;
-      transition: .3s;
-    }
+    .profile-btn { background: none; border: none; color: inherit; font: inherit; cursor: pointer; transition: .3s; }
+    .profile-btn:hover { color: #fff; transform: scale(1.05); }
+    .clickable-btn { border-bottom: 1px dashed rgba(212,175,55,0.85); padding-bottom: 2px; position: relative; display: inline-flex; align-items: center; gap: 6px; }
+    .clickable-btn::after { content: "↗"; font-size: 0.65em; color: var(--gold); opacity: 0.95; transform: translateY(-2px); }
+    .clickable-btn:hover, .clickable-btn:focus-visible { border-bottom-color: #fff; text-shadow: 0 0 9px rgba(255,223,158,0.8); outline: none; }
 
-    .profile-btn:hover {
-      color: #fff;
-      transform: scale(1.05);
-    }
+    .degree-initial { position: relative; display: inline-block; line-height: 1; margin-right: 1px; }
+    .degree-initial::before { content: "🎓"; position: absolute; top: -0.68em; left: -0.06em; font-size: 0.42em; transform: rotate(-12deg); filter: drop-shadow(0 1px 1px rgba(0,0,0,0.35)); pointer-events: none; }
 
-    .clickable-btn {
-      border-bottom: 1px dashed rgba(212, 175, 55, 0.85);
-      padding-bottom: 2px;
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
+    .phd-initial { position: relative; display: inline-block; line-height: 1; margin-right: 1px; color: #ffe2a0; font-weight: 700; }
+    .phd-initial::before { content: "🎓"; position: absolute; top: -0.82em; left: -0.08em; font-size: 0.95em; transform: rotate(-10deg); filter: drop-shadow(0 1px 1px rgba(0,0,0,0.35)); pointer-events: none; }
+    .phd-initial::after { content: "PhD"; position: absolute; top: -1.45em; right: -1.3em; font-size: 0.42em; font-family: 'Marcellus', serif; color: var(--gold); letter-spacing: 0.5px; text-shadow: 0 1px 1px rgba(0,0,0,0.4); pointer-events: none; }
 
-    .clickable-btn::after {
-      content: "↗";
-      font-size: 0.65em;
-      color: var(--gold);
-      opacity: 0.95;
-      transform: translateY(-2px);
-    }
+    .eng-initial { position: relative; display: inline-block; line-height: 1; margin-right: 1px; color: #ffe2a0; font-weight: 700; }
+    .eng-initial::before { content: "⛑️"; position: absolute; top: -0.9em; left: -0.06em; font-size: 0.9em; transform: rotate(-10deg); filter: drop-shadow(0 1px 1px rgba(0,0,0,0.35)); pointer-events: none; }
+    .eng-initial::after { content: "Eng"; position: absolute; top: -1.5em; right: -1.35em; font-size: 0.42em; font-family: 'Marcellus', serif; color: var(--gold); letter-spacing: 0.5px; text-shadow: 0 1px 1px rgba(0,0,0,0.4); pointer-events: none; }
 
-    .clickable-btn:hover,
-    .clickable-btn:focus-visible {
-      border-bottom-color: #fff;
-      text-shadow: 0 0 9px rgba(255, 223, 158, 0.8);
-      outline: none;
-    }
+    .pharm-initial { position: relative; display: inline-block; line-height: 1; margin-right: 1px; color: #ffe2a0; font-weight: 700; }
+    .pharm-initial::before { content: "💊"; position: absolute; top: -0.82em; left: -0.05em; font-size: 0.85em; transform: rotate(-12deg); filter: drop-shadow(0 1px 1px rgba(0,0,0,0.35)); pointer-events: none; }
+    .pharm-initial::after { content: "D.Pharm"; position: absolute; top: -1.5em; right: -2.25em; font-size: 0.38em; font-family: 'Marcellus', serif; color: var(--gold); letter-spacing: 0.4px; text-shadow: 0 1px 1px rgba(0,0,0,0.4); pointer-events: none; }
 
-    .click-hint {
-      margin-top: 8px;
-      font-size: 0.86rem;
-      color: #f1dcbf;
-      letter-spacing: 0.3px;
-      font-style: italic;
-    }
+    .astro-initial { position: relative; display: inline-block; line-height: 1; margin-right: 1px; color: #ffe2a0; font-weight: 700; }
+    .astro-initial::before { content: "🔮"; position: absolute; top: -0.84em; left: -0.08em; font-size: 0.86em; transform: rotate(-10deg); filter: drop-shadow(0 1px 1px rgba(0,0,0,0.35)); pointer-events: none; }
+    .astro-initial::after { content: "Astro"; position: absolute; top: -1.52em; right: -1.95em; font-size: 0.38em; font-family: 'Marcellus', serif; color: var(--gold); letter-spacing: 0.4px; text-shadow: 0 1px 1px rgba(0,0,0,0.4); pointer-events: none; }
 
-    .location-hint {
-      margin-top: 6px;
-      color: #f1dcbf;
-      font-size: 0.84rem;
-      letter-spacing: 0.3px;
-    }
+    .social-icons { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
+    .social-icons a { width: 55px; height: 55px; border-radius: 50%; background: #fff; display: flex; justify-content: center; align-items: center; transition: .3s; }
+    .social-icons a:hover { transform: scale(1.15); box-shadow: 0 0 15px var(--gold); }
+    .social-icons img { width: 28px; height: 28px; }
 
-    .degree-initial {
-      position: relative;
-      display: inline-block;
-      line-height: 1;
-      margin-right: 1px;
-    }
+    .petal { position: fixed; top: -50px; font-size: 22px; pointer-events: none; user-select: none; z-index: 9999; animation: fall linear forwards; opacity: 0.9; }
+    @keyframes fall { 0%{transform:translateY(-50px) rotate(0deg);opacity:0} 10%{opacity:1} 100%{transform:translateY(110vh) translateX(120px) rotate(720deg);opacity:0} }
 
-    .degree-initial::before {
-      content: "🎓";
-      position: absolute;
-      top: -0.68em;
-      left: -0.06em;
-      font-size: 0.42em;
-      transform: rotate(-12deg);
-      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
-      pointer-events: none;
-    }
-
-    .phd-initial {
-      position: relative;
-      display: inline-block;
-      line-height: 1;
-      margin-right: 1px;
-      color: #ffe2a0;
-      font-weight: 700;
-    }
-
-    .phd-initial::before {
-      content: "🎓";
-      position: absolute;
-      top: -0.82em;
-      left: -0.08em;
-      font-size: 0.95em;
-      transform: rotate(-10deg);
-      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
-      pointer-events: none;
-    }
-
-    .phd-initial::after {
-      content: "PhD";
-      position: absolute;
-      top: -1.45em;
-      right: -1.3em;
-      font-size: 0.42em;
-      font-family: 'Marcellus', serif;
-      color: var(--gold);
-      letter-spacing: 0.5px;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-      pointer-events: none;
-    }
-
-    .eng-initial {
-      position: relative;
-      display: inline-block;
-      line-height: 1;
-      margin-right: 1px;
-      color: #ffe2a0;
-      font-weight: 700;
-    }
-
-    .eng-initial::before {
-      content: "⛑️";
-      position: absolute;
-      top: -0.9em;
-      left: -0.06em;
-      font-size: 0.9em;
-      transform: rotate(-10deg);
-      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
-      pointer-events: none;
-    }
-
-    .eng-initial::after {
-      content: "Eng";
-      position: absolute;
-      top: -1.5em;
-      right: -1.35em;
-      font-size: 0.42em;
-      font-family: 'Marcellus', serif;
-      color: var(--gold);
-      letter-spacing: 0.5px;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-      pointer-events: none;
-    }
-
-    .pharm-initial {
-      position: relative;
-      display: inline-block;
-      line-height: 1;
-      margin-right: 1px;
-      color: #ffe2a0;
-      font-weight: 700;
-    }
-
-    .pharm-initial::before {
-      content: "💊";
-      position: absolute;
-      top: -0.82em;
-      left: -0.05em;
-      font-size: 0.85em;
-      transform: rotate(-12deg);
-      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
-      pointer-events: none;
-    }
-
-    .pharm-initial::after {
-      content: "D.Pharm";
-      position: absolute;
-      top: -1.5em;
-      right: -2.25em;
-      font-size: 0.38em;
-      font-family: 'Marcellus', serif;
-      color: var(--gold);
-      letter-spacing: 0.4px;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-      pointer-events: none;
-    }
-
-    .astro-initial {
-      position: relative;
-      display: inline-block;
-      line-height: 1;
-      margin-right: 1px;
-      color: #ffe2a0;
-      font-weight: 700;
-    }
-
-    .astro-initial::before {
-      content: "🔮";
-      position: absolute;
-      top: -0.84em;
-      left: -0.08em;
-      font-size: 0.86em;
-      transform: rotate(-10deg);
-      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
-      pointer-events: none;
-    }
-
-    .astro-initial::after {
-      content: "Astro";
-      position: absolute;
-      top: -1.52em;
-      right: -1.95em;
-      font-size: 0.38em;
-      font-family: 'Marcellus', serif;
-      color: var(--gold);
-      letter-spacing: 0.4px;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-      pointer-events: none;
-    }
-
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
-    }
-
-    .social-icons a {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: .3s;
-    }
-
-    .social-icons a:hover {
-      transform: scale(1.15);
-      box-shadow: 0 0 15px var(--gold);
-    }
-
-    .social-icons img {
-      width: 28px;
-      height: 28px;
-    }
-
-    /* Floating Flower Petals */
-    .petal {
-      position: fixed;
-      top: -50px;
-      font-size: 22px;
-      pointer-events: none;
-      user-select: none;
-      z-index: 9999;
-      animation: fall linear forwards;
-      opacity: 0.9;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 0;
-      }
-
-      10% {
-        opacity: 1;
-      }
-
-      100% {
-        transform: translateY(110vh) translateX(120px) rotate(720deg);
-        opacity: 0;
-      }
-    }
-
+    /* ── TRAVEL EXPLORER ── */
     .travel-section {
       width: 100%;
       max-width: 100%;
       margin: 36px 0 0;
-      padding: 30px 20px;
+      padding: 0;
       border: 2px solid var(--gold);
       border-radius: 18px;
-      background: rgba(34, 0, 12, 0.7);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
-    }
-
-    .travel-title {
-      font-family: 'Cinzel Decorative', serif;
-      color: var(--gold);
-      letter-spacing: 1px;
-      margin-bottom: 22px;
-      font-size: 1.6rem;
-    }
-
-    .travel-top {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .info-card {
-      border: 1px solid rgba(212, 175, 55, 0.5);
-      border-radius: 12px;
-      padding: 16px;
-      background: rgba(255, 255, 255, 0.05);
-      text-align: left;
-    }
-
-    .info-card h3 {
-      margin-bottom: 10px;
-      color: var(--gold);
-      font-size: 1.05rem;
-      letter-spacing: 0.5px;
-    }
-
-    .weather-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      font-size: 0.95rem;
-      color: #f4e6d5;
-    }
-
-    .music-controls {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .music-btn {
-      border: none;
-      border-radius: 30px;
-      padding: 10px 18px;
-      background: linear-gradient(135deg, var(--gold), var(--dark-gold));
-      color: var(--maroon);
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .music-controls input[type="range"] {
-      width: 170px;
-      accent-color: var(--gold);
-    }
-
-    .music-status {
-      font-size: 0.9rem;
-      color: #ead9c7;
-      margin-top: 8px;
-      min-height: 18px;
-    }
-
-    .map-stage {
-      margin-top: 12px;
-      border: 1px solid rgba(212, 175, 55, 0.45);
-      border-radius: 14px;
-      background: linear-gradient(180deg, rgba(130, 21, 42, 0.55), rgba(20, 0, 8, 0.75));
-      padding: 14px;
-      position: relative;
+      background: rgba(34,0,12,0.7);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.35);
       overflow: hidden;
     }
 
-    .route-svg {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    /* inner explorer styles */
+    .te-wrap { background: linear-gradient(160deg,#5a0014,#3a000c 60%,#6a0018); padding: 28px 16px 36px; font-family: 'Marcellus', serif; color: #fff5e6; }
+    .te-title { font-family: 'Cinzel Decorative', serif; color: var(--gold); font-size: 1.5rem; text-align: center; letter-spacing: 1px; margin-bottom: 6px; }
+    .te-sub { text-align: center; color: #f0d9b5; font-size: 0.9rem; margin-bottom: 22px; font-style: italic; }
 
-    .road {
-      fill: none;
-      stroke: rgba(255, 221, 151, 0.9);
-      stroke-width: 6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-dasharray: 8 8;
-      animation: roadMove 2s linear infinite;
-    }
+    .te-tabs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px; }
+    .te-tab { background: rgba(212,175,55,0.12); border: 1px solid rgba(212,175,55,0.4); color: #f0d9b5; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-family: 'Marcellus', serif; font-size: 0.88rem; transition: all .25s; }
+    .te-tab.active, .te-tab:hover { background: linear-gradient(135deg,var(--gold),var(--dark-gold)); color: #5a0014; font-weight: bold; }
 
-    .branch-road {
-      stroke: rgba(255, 194, 123, 0.7);
-      stroke-width: 4;
-      fill: none;
-      stroke-dasharray: 6 8;
-      animation: roadMove 2.5s linear infinite;
-    }
+    .te-panel { display: none; animation: teIn .35s ease; }
+    .te-panel.active { display: block; }
+    @keyframes teIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
 
-    .node {
-      fill: #fff;
-      stroke: var(--gold);
-      stroke-width: 3;
-      transition: transform 0.3s ease, fill 0.3s ease;
-      transform-origin: center;
-    }
+    .te-map-wrap { position: relative; border: 2px solid rgba(212,175,55,0.6); border-radius: 18px; overflow: hidden; background: #1a0008; }
+    #teMapSvg { width: 100%; display: block; }
+    .te-car { position: absolute; font-size: 22px; pointer-events: none; transform: translate(-50%,-60%); filter: drop-shadow(0 2px 4px rgba(0,0,0,.6)); z-index: 5; }
+    .te-legend { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; margin-top: 12px; font-size: .82rem; color: #f0d9b5; }
+    .te-leg-item { display: flex; align-items: center; gap: 5px; }
+    .te-leg-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .te-ticker { background: rgba(212,175,55,0.12); border: 1px solid rgba(212,175,55,0.4); border-radius: 10px; padding: 10px 14px; margin-top: 12px; font-size: .88rem; color: #ffe8c5; min-height: 38px; transition: all .3s; }
+    .te-ticker strong { color: var(--gold); }
 
-    .node.active {
-      fill: #ffe08a;
-      transform: scale(1.18);
-      filter: drop-shadow(0 0 10px rgba(255, 220, 133, 0.9));
-    }
+    .te-dest-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 14px; }
+    .te-dest-card { background: rgba(128,0,32,0.5); border: 1px solid rgba(212,175,55,0.45); border-radius: 14px; padding: 14px; cursor: pointer; transition: all .25s; position: relative; overflow: hidden; }
+    .te-dest-card:hover { border-color: var(--gold); background: rgba(128,0,32,0.75); transform: translateY(-2px); }
+    .te-dest-card.te-selected { border-color: var(--gold); background: rgba(180,0,40,0.6); box-shadow: 0 0 0 2px rgba(212,175,55,.3); }
+    .te-dest-icon { font-size: 1.6rem; margin-bottom: 8px; }
+    .te-dest-name { font-size: 1rem; color: var(--gold); font-weight: bold; margin-bottom: 4px; }
+    .te-dest-dist { font-size: .82rem; color: #f0d9b5; margin-bottom: 6px; }
+    .te-dest-desc { font-size: .83rem; color: #ddd; line-height: 1.45; }
+    .te-dest-badge { position: absolute; top: 10px; right: 10px; background: rgba(212,175,55,.2); border: 1px solid rgba(212,175,55,.5); border-radius: 8px; padding: 3px 8px; font-size: .72rem; color: var(--gold); }
+    .te-wx-box { background: rgba(34,0,12,.6); border: 1px solid rgba(212,175,55,.4); border-radius: 14px; padding: 16px; margin-bottom: 18px; }
+    .te-wx-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
+    .te-wx-item { text-align: center; padding: 10px; background: rgba(212,175,55,.08); border-radius: 10px; }
+    .te-wx-val { font-size: 1.3rem; font-weight: bold; color: var(--gold); }
+    .te-wx-label { font-size: .75rem; color: #f0d9b5; margin-top: 2px; }
+    .te-divider { border: none; border-top: 1px solid rgba(212,175,55,.3); margin: 18px 0; }
+    .te-scroll-hint { text-align: center; font-size: .78rem; color: #f0d9b5; font-style: italic; margin-top: 8px; }
 
-    .map-label {
-      fill: #fff7e5;
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0.4px;
-    }
+    /* also has music card and RSVP btn inside explorer */
+    .te-info-row { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin-bottom: 20px; }
+    .te-info-card { border: 1px solid rgba(212,175,55,0.5); border-radius: 12px; padding: 16px; background: rgba(255,255,255,0.05); text-align: left; }
+    .te-info-card h3 { margin-bottom: 10px; color: var(--gold); font-size: 1.05rem; letter-spacing: 0.5px; }
+    .te-music-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .te-music-btn { border: none; border-radius: 30px; padding: 10px 18px; background: linear-gradient(135deg,var(--gold),var(--dark-gold)); color: var(--maroon); font-weight: bold; cursor: pointer; font-family: 'Marcellus', serif; }
+    .te-music-controls input[type="range"] { width: 120px; accent-color: var(--gold); }
+    .te-music-status { font-size: 0.85rem; color: #ead9c7; margin-top: 8px; min-height: 16px; }
 
-    .distance-label {
-      fill: #ffd87b;
-      font-size: 13px;
-      font-style: italic;
-    }
-
-    .car-marker {
-      position: absolute;
-      font-size: 24px;
-      transform: translate(-50%, -58%);
-      pointer-events: none;
-      filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.45));
-      z-index: 3;
-    }
-
-    .stop-highlight {
-      margin-top: 10px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 10px;
-      padding: 10px;
-      text-align: left;
-      color: #f4e6d5;
-      font-size: 0.95rem;
-    }
-
-    .tourist-list {
-      margin-top: 16px;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .tour-stop {
-      border: 1px solid rgba(212, 175, 55, 0.45);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 12px;
-      text-align: left;
-    }
-
-    .tour-stop strong {
-      color: #ffe2a0;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .tour-stop span {
-      color: #f3e7d8;
-      font-size: 0.9rem;
-      display: block;
-      line-height: 1.4;
-    }
-
-    @keyframes roadMove {
-      to {
-        stroke-dashoffset: -32;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .travel-top,
-      .tourist-list {
-        grid-template-columns: 1fr;
-      }
-
-      .map-label {
-        font-size: 13px;
-      }
-
-      .distance-label {
-        font-size: 11px;
-      }
+    @media (max-width: 600px) {
+      .te-dest-grid { grid-template-columns: 1fr 1fr; }
+      .te-title { font-size: 1.2rem; }
+      .te-info-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
   <div class="bg-hero">
-    <!-- Main Invitation Card -->
     <div class="container">
       <div class="garland">💐🍃🌼🍃💐</div>
       <div class="shubh">|| WEDDING INVITATION ||</div>
-      <p style="margin-top: 20px; font-style: italic; color: #ddd;">
+      <p style="margin-top:20px;font-style:italic;color:#ddd;">
         We cordially invite you and your family to celebrate the auspicious occasion of the marriage of
       </p>
-      
 
-      <!-- Groom Details -->
-      <div style="margin-top: 30px;">
+      <div style="margin-top:30px;">
         <h1 class="script"><button class="profile-btn clickable-btn" onclick="openProfileModal('gokul')" title="Open groom profile"><span class="degree-initial">Gokul</span></button></h1>
-        <p class="parents">Son of Mr. <span class="eng-initial">R</span>aghu & Mrs. <span class="astro-initial">S</span>anthanalakshmi</p>
+        <p class="parents">Son of Mr. <span class="eng-initial">R</span>aghu &amp; Mrs. <span class="astro-initial">S</span>anthanalakshmi</p>
       </div>
 
       <div class="and">with</div>
 
-      <!-- Bride Details -->
       <div>
         <h1 class="script"><button class="profile-btn clickable-btn" onclick="openProfileModal('sharumathi')" title="Open bride profile"><span class="degree-initial">Sharumathi</span></button></h1>
-        <p class="parents">Daughter of Mr. <span class="pharm-initial">Gobi</span>& Mrs. <span class="phd-initial">L</span>alitha</p>
+        <p class="parents">Daughter of Mr. <span class="pharm-initial">Gobi</span> &amp; Mrs. <span class="phd-initial">L</span>alitha</p>
       </div>
 
-      <!-- Event Details -->
       <div class="details-box">
         <div class="date">Sunday, September 13, 2026</div>
         <div class="time">06:00 AM - 07:30 AM (Muhurtham)</div>
-        <div class="venue" style="margin-top: 20px; font-weight: bold; color: var(--gold);">
-          <h3 class="script"><button class="profile-btn clickable-btn" onclick="openLocation('location')" title="Open venue location in maps">📍 Narpavi Arangam</button>
-          </h3>
+        <div class="venue" style="margin-top:20px;font-weight:bold;color:var(--gold);">
+          <h3 class="script"><button class="profile-btn clickable-btn" onclick="openLocation('location')" title="Open venue location in maps">📍 Narpavi Arangam</button></h3>
         </div>
         <div class="location-sub">Karivalam Vandanalur, Sankarankovil, Tenkasi District, Tamil Nadu</div>
       </div>
 
-      <!-- Countdown Timer Component -->
-      <h3 style="color: var(--gold); letter-spacing: 1px; margin-bottom: 10px;">Awaiting the Auspicious Hour</h3>
+      <h3 style="color:var(--gold);letter-spacing:1px;margin-bottom:10px;">Awaiting the Auspicious Hour</h3>
       <div id="countdown">
-        <div class="time-block"><span id="days">00</span>
-          <div class="time-label">Days</div>
-        </div>
-        <div class="time-block"><span id="hours">00</span>
-          <div class="time-label">Hours</div>
-        </div>
-        <div class="time-block"><span id="minutes">00</span>
-          <div class="time-label">Minutes</div>
-        </div>
-        <div class="time-block"><span id="seconds">00</span>
-          <div class="time-label">Seconds</div>
-        </div>
-      </div>
-  <section class="travel-section">
-    <h2 class="travel-title">Travel Explorer from Sankarankovil</h2>
-
-    <div class="travel-top">
-      <div class="info-card">
-        <h3>Live Weather in Tenkasi</h3>
-        <div class="weather-grid" id="tenkasiWeather">
-          <div>Condition: <span id="weatherCondition">Loading...</span></div>
-          <div>Temperature: <span id="weatherTemp">--</span></div>
-          <div>Wind: <span id="weatherWind">--</span></div>
-          <div>Updated: <span id="weatherTime">--</span></div>
-        </div>
+        <div class="time-block"><span id="days">00</span><div class="time-label">Days</div></div>
+        <div class="time-block"><span id="hours">00</span><div class="time-label">Hours</div></div>
+        <div class="time-block"><span id="minutes">00</span><div class="time-label">Minutes</div></div>
+        <div class="time-block"><span id="seconds">00</span><div class="time-label">Seconds</div></div>
       </div>
 
-      <div class="info-card">
-        <h3>Nadaswaram Background Music</h3>
-        <div class="music-controls">
-          <button id="musicToggleBtn" class="music-btn">Play</button>
-          <label for="musicVolume">Volume</label>
-          <input id="musicVolume" type="range" min="0" max="1" step="0.1" value="0.7">
-        </div>
-        <div class="music-status" id="musicStatus">Music is ready. Click Play.</div>
-        <audio id="nadaswaramAudio" loop preload="none">
-          <source src="music/nadaswaram.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
+      <!-- ═══════════ TRAVEL EXPLORER ═══════════ -->
+      <section class="travel-section">
+        <div class="te-wrap">
+          <div class="te-title">✦ Travel Explorer ✦</div>
+          <div class="te-sub">From Sankarankovil · Wedding on Sept 13, 2026 · Tenkasi District, Tamil Nadu</div>
 
-    <div class="map-stage">
-      <div id="carMarker" class="car-marker">🚗</div>
-      <svg class="route-svg" id="routeSvg" viewBox="0 0 960 650" role="img" aria-label="Tourist route map from Sankarankovil">
-        <path id="mainRoute" class="road" d="M120 80 L120 220 L360 220 L360 350 L360 500 L540 500 L540 590" />
-        <path class="branch-road" d="M120 80 L250 80 L250 220 L360 220" />
-        <path class="branch-road" d="M120 80 L250 80 L250 320" />
-        <path class="branch-road" d="M360 350 L360 220 L250 220" />
-        <path class="branch-road" d="M360 350 L430 350" />
-        <path class="branch-road" d="M120 80 L80 170 L80 260 L80 360" />
-        <path class="branch-road" d="M120 80 L190 145 L260 220" />
-        <path class="branch-road" d="M260 220 L340 275" />
+          <!-- Music + Weather quick row -->
+          <div class="te-info-row">
+            <div class="te-info-card">
+              <h3>Live Weather — Tenkasi</h3>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:.9rem;color:#f4e6d5;">
+                <div>Condition: <span id="teWxCond" style="color:var(--gold)">Loading…</span></div>
+                <div>Temp: <span id="teWxTemp" style="color:var(--gold)">--</span></div>
+                <div>Wind: <span id="teWxWind" style="color:var(--gold)">--</span></div>
+                <div>At: <span id="teWxTime" style="color:var(--gold)">--</span></div>
+              </div>
+            </div>
+            <div class="te-info-card">
+              <h3>Play Music</h3>
+              <div class="te-music-controls">
+                <button id="teMusicBtn" class="te-music-btn">▶ Play</button>
+                <input id="teMusicVol" type="range" min="0" max="1" step="0.1" value="0.7">
+              </div>
+              <div class="te-music-status" id="teMusicStatus">Ready. Click Play.</div>
+              <audio id="teAudio" loop preload="none">
+                <source src="music/nadaswaram.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
 
-        <circle class="node" id="node-sankarankovil" cx="120" cy="80" r="9" />
-        <circle class="node" id="node-tenkasi" cx="120" cy="220" r="9" />
-        <circle class="node" id="node-sengottai" cx="360" cy="350" r="9" />
-        <circle class="node" id="node-kottavasal" cx="360" cy="500" r="9" />
-        <circle class="node" id="node-rajathottam" cx="540" cy="500" r="9" />
-        <circle class="node" id="node-thenmala" cx="540" cy="590" r="9" />
-        <circle class="node" id="node-courtallam" cx="250" cy="220" r="7" />
-        <circle class="node" id="node-panpoli" cx="250" cy="320" r="7" />
-        <circle class="node" id="node-gundar" cx="430" cy="350" r="7" />
-        <circle class="node" id="node-alangulam" cx="80" cy="170" r="7" />
-        <circle class="node" id="node-ambasamudram" cx="80" cy="260" r="7" />
-        <circle class="node" id="node-papanasam" cx="80" cy="360" r="7" />
-        <circle class="node" id="node-kmtr" cx="340" cy="275" r="7" />
+          <div class="te-tabs">
+            <div class="te-tab active" onclick="teTab('map')">🗺 Live Map</div>
+            <div class="te-tab" onclick="teTab('dest')">📍 Destinations</div>
+            <div class="te-tab" onclick="teTab('weather')">🌤 Weather</div>
+          </div>
 
-        <text class="map-label" x="20" y="72">Sankarankovil</text>
-        <text class="map-label" x="26" y="242">Tenkasi</text>
-        <text class="map-label" x="372" y="346">Sengottai</text>
-        <text class="map-label" x="372" y="524">Kottavasal</text>
-        <text class="map-label" x="552" y="494">Rajathottam</text>
-        <text class="map-label" x="552" y="612">Thenmala (Kerala)</text>
-        <text class="map-label" x="262" y="216">Courtallam</text>
-        <text class="map-label" x="262" y="317">Panpoli Temple</text>
-        <text class="map-label" x="442" y="347">Gundar Falls</text>
-        <text class="map-label" x="12" y="165">Alangulam</text>
-        <text class="map-label" x="12" y="258">Ambasamudram</text>
-        <text class="map-label" x="12" y="380">Papanasam</text>
-        <text class="map-label" x="350" y="271">KMTR</text>
+          <!-- MAP -->
+          <div class="te-panel active" id="te-map">
+            <div class="te-map-wrap">
+              <div class="te-car" id="teCarEl">🚗</div>
+              <svg id="teMapSvg" viewBox="0 0 760 580" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="teGlow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <rect width="760" height="580" fill="#160005"/>
+                <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+                  <line x1="0" y1="100" x2="760" y2="100"/><line x1="0" y1="200" x2="760" y2="200"/>
+                  <line x1="0" y1="300" x2="760" y2="300"/><line x1="0" y1="400" x2="760" y2="400"/>
+                  <line x1="0" y1="500" x2="760" y2="500"/>
+                  <line x1="150" y1="0" x2="150" y2="580"/><line x1="300" y1="0" x2="300" y2="580"/>
+                  <line x1="450" y1="0" x2="450" y2="580"/><line x1="600" y1="0" x2="600" y2="580"/>
+                </g>
+                <g stroke="rgba(255,210,100,0.7)" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="10,6">
+                  <path d="M220 60 L220 200"/>
+                  <path d="M220 200 L320 200"/>
+                  <path d="M220 200 L220 330"/>
+                  <path d="M220 330 L370 330 L370 450"/>
+                  <path d="M370 450 L510 450 L510 530"/>
+                  <path d="M220 330 L120 380"/>
+                  <path d="M220 200 L320 280"/>
+                  <path d="M220 60 L620 60 L620 180"/>
+                  <path d="M620 180 L620 310 L680 370"/>
+                  <path d="M620 180 L700 120"/>
+                  <path d="M320 200 L390 145"/>
+                </g>
+                <g stroke="rgba(255,190,80,0.4)" stroke-width="3" fill="none" stroke-dasharray="6,8">
+                  <path d="M320 280 L220 330"/>
+                  <path d="M120 380 L80 430"/>
+                  <path d="M510 530 L560 500"/>
+                  <path d="M680 370 L700 420"/>
+                </g>
+                <g stroke="rgba(255,230,150,0.25)" stroke-width="3" fill="none" stroke-linecap="round">
+                  <path d="M220 60 L220 200 L320 200 L390 145" stroke-dasharray="8,12"><animate attributeName="stroke-dashoffset" from="0" to="-40" dur="1.2s" repeatCount="indefinite"/></path>
+                  <path d="M220 200 L220 330 L370 330 L370 450 L510 450 L510 530" stroke-dasharray="8,12"><animate attributeName="stroke-dashoffset" from="0" to="-40" dur="1.6s" repeatCount="indefinite"/></path>
+                  <path d="M220 60 L620 60 L620 310 L680 370" stroke-dasharray="8,12"><animate attributeName="stroke-dashoffset" from="0" to="-40" dur="2s" repeatCount="indefinite"/></path>
+                </g>
+                <!-- Nodes -->
+                <g id="ten-skv" class="temapnode" data-idx="0" onclick="teSelectStop(0)" style="cursor:pointer">
+                  <circle cx="220" cy="60" r="14" fill="#D4AF37" stroke="#fff" stroke-width="2" filter="url(#teGlow)"/>
+                  <text x="220" y="64" text-anchor="middle" fill="#5a0014" font-size="10" font-weight="bold">SKV</text>
+                  <text x="240" y="50" fill="#ffe8b0" font-size="12" font-weight="bold">Sankarankovil</text>
+                  <text x="240" y="64" fill="#ffc870" font-size="10">Wedding Venue ★</text>
+                </g>
+                <g id="ten-tksi" class="temapnode" data-idx="1" onclick="teSelectStop(1)" style="cursor:pointer">
+                  <circle cx="220" cy="200" r="12" fill="#c94060" stroke="#ffd87b" stroke-width="2"/>
+                  <text x="165" y="194" fill="#ffe8b0" font-size="12" font-weight="bold">Tenkasi</text>
+                  <text x="165" y="208" fill="#ffc870" font-size="10">Hub · 43 km</text>
+                </g>
+                <g id="ten-ctlm" class="temapnode" data-idx="2" onclick="teSelectStop(2)" style="cursor:pointer">
+                  <circle cx="320" cy="200" r="10" fill="#9b2050" stroke="#ffd87b" stroke-width="1.5"/>
+                  <text x="330" y="195" fill="#ffe8b0" font-size="11">Courtallam</text>
+                  <text x="330" y="208" fill="#ffc870" font-size="9.5">7 km · Waterfalls</text>
+                </g>
+                <g id="ten-5f" class="temapnode" data-idx="3" onclick="teSelectStop(3)" style="cursor:pointer">
+                  <circle cx="390" cy="145" r="8" fill="#6a3080" stroke="#ffd87b" stroke-width="1.5"/>
+                  <text x="400" y="142" fill="#ffe8b0" font-size="10">Five Falls</text>
+                  <text x="400" y="155" fill="#ffc870" font-size="9">12 km · Scenic</text>
+                </g>
+                <g id="ten-pp" class="temapnode" data-idx="4" onclick="teSelectStop(4)" style="cursor:pointer">
+                  <circle cx="320" cy="280" r="9" fill="#7a1030" stroke="#ffd87b" stroke-width="1.5"/>
+                  <text x="332" y="276" fill="#ffe8b0" font-size="10">Panpoli Temple</text>
+                  <text x="332" y="289" fill="#ffc870" font-size="9">15 km · Sacred</text>
+                </g>
+                <g id="ten-sgtt" class="temapnode" data-idx="5" onclick="teSelectStop(5)" style="cursor:pointer">
+                  <circle cx="220" cy="330" r="12" fill="#c94060" stroke="#ffd87b" stroke-width="2"/>
+                  <text x="170" y="325" fill="#ffe8b0" font-size="12" font-weight="bold">Sengottai</text>
+                  <text x="170" y="339" fill="#ffc870" font-size="10">25 km</text>
+                </g>
+                <g id="ten-gnd" class="temapnode" data-idx="6" onclick="teSelectStop(6)" style="cursor:pointer">
+                  <circle cx="120" cy="380" r="9" fill="#1a5070" stroke="#ffd87b" stroke-width="1.5"/>
+                  <text x="60" y="376" fill="#ffe8b0" font-size="10">Gundar Dam</text>
+                  <text x="60" y="389" fill="#ffc870" font-size="9">Reservoir</text>
+                </g>
+                <g id="ten-ktv" class="temapnode" data-idx="7" onclick="teSelectStop(7)" style="cursor:pointer">
+                  <circle cx="370" cy="330" r="9" fill="#9b2050" stroke="#ffd87b" stroke-width="1.5"/>
+                  <text x="382" y="327" fill="#ffe8b0" font-size="10">Kottavasal</text>
+                  <text x="382" y="340" fill="#ffc870" font-size="9">18 km from Seng.</text>
+                </g>
+                <g id="ten-rjt" class="temapnode" data-idx="8" onclick="teSelectStop(8)" style="cursor:pointer">
+                  <circle cx="370" cy="450" r="9" fill="#9b2050" stroke="#ffd87b" stroke-width="1.5"/>
+                  <text x="382" y="447" fill="#ffe8b0" font-size="10">Rajathottam</text>
+                  <text x="382" y="460" fill="#ffc870" font-size="9">Wildlife</text>
+                </g>
+                <g id="ten-thm" class="temapnode" data-idx="9" onclick="teSelectStop(9)" style="cursor:pointer">
+                  <circle cx="510" cy="530" r="11" fill="#0e5040" stroke="#ffd87b" stroke-width="2"/>
+                  <text x="520" y="526" fill="#ffe8b0" font-size="11" font-weight="bold">Thenmala</text>
+                  <text x="520" y="539" fill="#ffc870" font-size="9">Kerala · 12 km</text>
+                </g>
+                <g id="ten-alg" class="temapnode" data-idx="10" onclick="teSelectStop(10)" style="cursor:pointer">
+                  <circle cx="420" cy="60" r="8" fill="#7a1030" stroke="#ffd87b" stroke-width="1.5"/>
+                  <text x="430" y="56" fill="#ffe8b0" font-size="10">Alangulam</text>
+                  <text x="430" y="69" fill="#ffc870" font-size="9">30 km via NH</text>
+                </g>
+                <g id="ten-amb" class="temapnode" data-idx="11" onclick="teSelectStop(11)" style="cursor:pointer">
+                  <circle cx="620" cy="180" r="11" fill="#c94060" stroke="#ffd87b" stroke-width="2"/>
+                  <text x="630" y="175" fill="#ffe8b0" font-size="11" font-weight="bold">Ambasamudram</text>
+                  <text x="630" y="189" fill="#ffc870" font-size="9">65 km · Gateway</text>
+                </g>
+                <g id="ten-pap" class="temapnode" data-idx="12" onclick="teSelectStop(12)" style="cursor:pointer">
+                  <circle cx="620" cy="310" r="9" fill="#1a5040" stroke="#ffd87b" stroke-width="1.5"/>
+                  <text x="630" y="306" fill="#ffe8b0" font-size="10">Papanasam Dam</text>
+                  <text x="630" y="319" fill="#ffc870" font-size="9">Scenic / Temple</text>
+                </g>
+                <g id="ten-kmtr" class="temapnode" data-idx="13" onclick="teSelectStop(13)" style="cursor:pointer">
+                  <circle cx="680" cy="370" r="9" fill="#1a5070" stroke="#ffd87b" stroke-width="1.5"/>
+                  <text x="690" y="366" fill="#ffe8b0" font-size="10">KMTR Reserve</text>
+                  <text x="690" y="379" fill="#ffc870" font-size="9">Wildlife Forest</text>
+                </g>
+                <g id="ten-tnv" class="temapnode" data-idx="14" onclick="teSelectStop(14)" style="cursor:pointer">
+                  <circle cx="700" cy="120" r="10" fill="#c94060" stroke="#ffd87b" stroke-width="1.5"/>
+                  <text x="710" y="115" fill="#ffe8b0" font-size="11" font-weight="bold">Tirunelveli</text>
+                  <text x="710" y="128" fill="#ffc870" font-size="9">City · 45 km</text>
+                </g>
+                <text x="30" y="560" fill="rgba(255,210,100,0.35)" font-size="11" font-style="italic">Tenkasi &amp; Tirunelveli Districts, Tamil Nadu</text>
+                <text x="595" y="560" fill="rgba(255,210,100,0.35)" font-size="11" font-style="italic">← Kerala border</text>
+              </svg>
+            </div>
+            <div class="te-ticker" id="teTicker"><strong>Tap any destination</strong> on the map to see details.</div>
+            <div class="te-legend">
+              <div class="te-leg-item"><div class="te-leg-dot" style="background:#D4AF37"></div>Wedding / Hub</div>
+              <div class="te-leg-item"><div class="te-leg-dot" style="background:#c94060"></div>Town</div>
+              <div class="te-leg-item"><div class="te-leg-dot" style="background:#6a3080"></div>Waterfall</div>
+              <div class="te-leg-item"><div class="te-leg-dot" style="background:#1a5070"></div>Nature / Dam</div>
+              <div class="te-leg-item"><div class="te-leg-dot" style="background:#0e5040"></div>Kerala</div>
+            </div>
+          </div>
 
-        <text class="distance-label" x="130" y="150">43 km | 1 hr 5 min</text>
-        <text class="distance-label" x="185" y="205">7 km | 15 min</text>
-        <text class="distance-label" x="185" y="270">15 km | 30 min</text>
-        <text class="distance-label" x="220" y="325">25 km | 45 min</text>
-        <text class="distance-label" x="370" y="430">18 km | 35 min</text>
-        <text class="distance-label" x="442" y="488">18 km | 35 min</text>
-        <text class="distance-label" x="548" y="548">12 km | 25 min</text>
-      </svg>
+          <!-- DESTINATIONS -->
+          <div class="te-panel" id="te-dest">
+            <div class="te-dest-grid" id="teDestGrid"></div>
+            <div class="te-scroll-hint">Tap a card to add it to your route planner ↑</div>
+          </div>
 
-      <div class="stop-highlight" id="activeStopInfo">
-        Current stop: Sankarankovil | Distance to next: 43 km | ETA: 1 hr 5 min
-      </div>
-    </div>
+          <!-- WEATHER -->
+          <div class="te-panel" id="te-weather">
+            <div class="te-wx-box">
+              <div style="color:var(--gold);font-size:1rem;margin-bottom:14px;letter-spacing:.5px;">Live — Tenkasi District</div>
+              <div class="te-wx-grid">
+                <div class="te-wx-item"><div class="te-wx-val" id="teWxCondBig">—</div><div class="te-wx-label">Condition</div></div>
+                <div class="te-wx-item"><div class="te-wx-val" id="teWxTempBig">—</div><div class="te-wx-label">Temperature</div></div>
+                <div class="te-wx-item"><div class="te-wx-val" id="teWxWindBig">—</div><div class="te-wx-label">Wind (km/h)</div></div>
+                <div class="te-wx-item"><div class="te-wx-val" id="teWxTimeBig">—</div><div class="te-wx-label">Updated</div></div>
+              </div>
+            </div>
+            <div style="background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:16px;">
+              <div style="color:var(--gold);margin-bottom:10px;font-size:.95rem;">September 13, 2026 — Wedding Day Forecast</div>
+              <div style="font-size:.88rem;color:#f0d9b5;line-height:1.7;">
+                🌤 Tenkasi receives <strong>South-West Monsoon</strong> from June–September. Wedding day mornings (06:00–08:00 AM) are typically <strong>cool and partly cloudy</strong> — ideal for outdoor mandapam ceremonies.<br><br>
+                🌡 Expected: 25–29°C · Humidity: 70–80% · Light showers possible by afternoon.<br><br>
+                🌊 September waterfalls: <strong>All falls will be at peak flow</strong>. Courtallam Five Falls will be roaring — take care on slippery rocks.
+              </div>
+            </div>
+            <div class="te-divider"></div>
+          </div>
 
-    <div class="tourist-list">
-      <div class="tour-stop"><strong>Sankarankovil to Tenkasi</strong><span>43 km | Approx. 1 hr 5 min</span></div>
-      <div class="tour-stop"><strong>Tenkasi to Courtallam</strong><span>7 km | Approx. 15 min</span></div>
-      <div class="tour-stop"><strong>Tenkasi to Panpoli Temple</strong><span>15 km | Approx. 30 min</span></div>
-      <div class="tour-stop"><strong>Tenkasi to Sengottai</strong><span>25 km | Approx. 45 min</span></div>
-      <div class="tour-stop"><strong>Sengottai to Kottavasal</strong><span>18 km | Approx. 35 min</span></div>
-      <div class="tour-stop"><strong>Sengottai to Gundar Falls</strong><span>15 km | Approx. 30 min</span></div>
-      <div class="tour-stop"><strong>Kottavasal to Rajathottam</strong><span>18 km | Approx. 35 min</span></div>
-      <div class="tour-stop"><strong>Rajathottam to Thenmala</strong><span>12 km | Approx. 25 min</span></div>
-      <div class="tour-stop"><strong>Sankarankovil, Alangulam, Ambasamudram</strong><span>Scenic detour towards Papanasam and KMTR.</span></div>
-      <div class="tour-stop"><strong>Ambasamudram to Papanasam / KMTR</strong><span>Nature route via hills, dams, and reserve forest.</span></div>
-    </div>
+          <!-- RSVP button -->
+          <div class="btn-group" id="teRsvpBlock" style="margin-top:28px;">
+            <button class="btn" onclick="openRSVPModal()">RSVP Now</button>
+          </div>
+          <div class="post-event-message" id="postEventMessage">
+            <h4>Thank You For Celebrating With Us</h4>
+            <p>We are deeply grateful for your love, blessings, and presence on our wedding day.</p>
+            <a class="album-link" href="https://photos.google.com/" target="_blank" rel="noopener noreferrer">View Wedding Photo Album</a>
+          </div>
 
-    <div class="btn-group">
-      <button class="btn" onclick="openRSVPModal()">RSVP Now</button>
-    </div>
+        </div><!-- /te-wrap -->
+      </section>
+      <!-- ═══════════ END TRAVEL EXPLORER ═══════════ -->
 
-    <div class="post-event-message" id="postEventMessage">
-      <h4>Thank You For Celebrating With Us</h4>
-      <p>We are deeply grateful for your love, blessings, and presence on our wedding day.</p>
-      <a class="album-link" id="photoAlbumLink" href="https://photos.google.com/" target="_blank" rel="noopener noreferrer">View Wedding Photo Album</a>
-    </div>
-  </section>
-
-    </div>
-  </div>
+    </div><!-- /container -->
+  </div><!-- /bg-hero -->
 
   <!-- RSVP Modal -->
   <div id="rsvpModal" class="modal modal-rsvp">
     <div class="modal-content">
       <span class="close-btn" onclick="closeRSVPModal()">&times;</span>
-      <h2 style="color: var(--gold); margin-bottom: 20px;">RSVP for the Wedding</h2>
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSejKUvoWn0EJ8hh4Ptd9KKqRfbvTuUkVpfLXI3R2ksB3ZQ3RA/viewform?embedded=true"
-        style="
-                width:100%;
-                height:calc(80vh - 70px);
-                border:none;
-                border-radius:10px;
-                background:#fff;
-            " loading="lazy">
-      </iframe>
+      <h2 style="color:var(--gold);margin-bottom:20px;">RSVP for the Wedding</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSejKUvoWn0EJ8hh4Ptd9KKqRfbvTuUkVpfLXI3R2ksB3ZQ3RA/viewform?embedded=true"
+        style="width:100%;height:calc(80vh - 70px);border:none;border-radius:10px;background:#fff;" loading="lazy"></iframe>
     </div>
   </div>
-  <script>
-    const weatherCodeMap = {
-      0: 'Clear sky',
-      1: 'Mostly clear',
-      2: 'Partly cloudy',
-      3: 'Cloudy',
-      45: 'Fog',
-      48: 'Fog',
-      51: 'Light drizzle',
-      53: 'Drizzle',
-      55: 'Heavy drizzle',
-      61: 'Light rain',
-      63: 'Rain',
-      65: 'Heavy rain',
-      80: 'Rain showers',
-      95: 'Thunderstorm'
-    };
 
-    async function loadTenkasiWeather() {
-      const url = 'https://api.open-meteo.com/v1/forecast?latitude=8.9598&longitude=77.3152&current=temperature_2m,weather_code,wind_speed_10m&timezone=Asia%2FKolkata';
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        const current = data.current;
-
-        document.getElementById('weatherCondition').innerText = weatherCodeMap[current.weather_code] || 'Live update';
-        document.getElementById('weatherTemp').innerText = `${current.temperature_2m} ${data.current_units.temperature_2m}`;
-        document.getElementById('weatherWind').innerText = `${current.wind_speed_10m} ${data.current_units.wind_speed_10m}`;
-
-        const localTime = new Date(current.time).toLocaleTimeString('en-IN', {
-          hour: '2-digit',
-          minute: '2-digit'
-        });
-        document.getElementById('weatherTime').innerText = localTime;
-      } catch (error) {
-        document.getElementById('weatherCondition').innerText = 'Unavailable';
-        document.getElementById('weatherTemp').innerText = 'Try again';
-        document.getElementById('weatherWind').innerText = 'Try again';
-        document.getElementById('weatherTime').innerText = 'Offline';
-      }
-    }
-
-    const nadaswaramAudio = document.getElementById('nadaswaramAudio');
-    const musicToggleBtn = document.getElementById('musicToggleBtn');
-    const musicVolume = document.getElementById('musicVolume');
-    const musicStatus = document.getElementById('musicStatus');
-
-    musicVolume.addEventListener('input', function () {
-      nadaswaramAudio.volume = Number(this.value);
-    });
-
-    musicToggleBtn.addEventListener('click', async function () {
-      try {
-        if (nadaswaramAudio.paused) {
-          await nadaswaramAudio.play();
-          musicToggleBtn.innerText = 'Pause';
-          musicStatus.innerText = 'Playing Nadaswaram background music.';
-        } else {
-          nadaswaramAudio.pause();
-          musicToggleBtn.innerText = 'Play';
-          musicStatus.innerText = 'Music paused.';
-        }
-      } catch (error) {
-        musicStatus.innerText = 'Add your music file at music/nadaswaram.mp3 to enable playback.';
-      }
-    });
-
-    const stopSequence = [
-      { nodeId: 'node-sankarankovil', name: 'Sankarankovil', nextDistance: '43 km', eta: '1 hr 5 min' },
-      { nodeId: 'node-tenkasi', name: 'Tenkasi', nextDistance: '7 km', eta: '15 min (Courtallam)' },
-      { nodeId: 'node-courtallam', name: 'Courtallam', nextDistance: '15 km', eta: '30 min (Panpoli Temple)' },
-      { nodeId: 'node-panpoli', name: 'Panpoli Temple', nextDistance: '25 km', eta: '45 min (Sengottai)' },
-      { nodeId: 'node-sengottai', name: 'Sengottai', nextDistance: '18 km', eta: '35 min (Kottavasal)' },
-      { nodeId: 'node-kottavasal', name: 'Kottavasal', nextDistance: '18 km', eta: '35 min (Rajathottam)' },
-      { nodeId: 'node-rajathottam', name: 'Rajathottam', nextDistance: '12 km', eta: '25 min (Thenmala)' },
-      { nodeId: 'node-thenmala', name: 'Thenmala (Kerala)', nextDistance: '-', eta: 'Journey complete' }
-    ];
-
-    function animateRouteCar() {
-      const mainRoute = document.getElementById('mainRoute');
-      const routeSvg = document.getElementById('routeSvg');
-      const carMarker = document.getElementById('carMarker');
-      const activeStopInfo = document.getElementById('activeStopInfo');
-      const totalLength = mainRoute.getTotalLength();
-
-      let progress = 0;
-      let stopIndex = 0;
-
-      setInterval(() => {
-        progress = (progress + 2) % 1000;
-        const point = mainRoute.getPointAtLength((progress / 1000) * totalLength);
-        const viewBox = routeSvg.viewBox.baseVal;
-        const scaleX = routeSvg.clientWidth / viewBox.width;
-        const scaleY = routeSvg.clientHeight / viewBox.height;
-
-        carMarker.style.left = `${14 + point.x * scaleX}px`;
-        carMarker.style.top = `${14 + point.y * scaleY}px`;
-      }, 45);
-
-      setInterval(() => {
-        stopSequence.forEach(stop => {
-          const node = document.getElementById(stop.nodeId);
-          if (node) {
-            node.classList.remove('active');
-          }
-        });
-
-        const currentStop = stopSequence[stopIndex];
-        const node = document.getElementById(currentStop.nodeId);
-        if (node) {
-          node.classList.add('active');
-        }
-
-        activeStopInfo.innerText = `Current stop: ${currentStop.name} | Distance to next: ${currentStop.nextDistance} | ETA: ${currentStop.eta}`;
-        stopIndex = (stopIndex + 1) % stopSequence.length;
-      }, 3200);
-    }
-
-    loadTenkasiWeather();
-    setInterval(loadTenkasiWeather, 300000);
-    animateRouteCar();
-
-    // Countdown Timer Logic
-    const countdownDate = new Date("September 13, 2026 06:00:00").getTime();
-
-    function activatePostWeddingState() {
-      const rsvpBlock = document.querySelector('.btn-group');
-      const postEventMessage = document.getElementById('postEventMessage');
-
-      if (rsvpBlock) {
-        rsvpBlock.style.display = 'none';
-      }
-
-      if (postEventMessage) {
-        postEventMessage.style.display = 'block';
-      }
-
-      document.getElementById('countdown').innerHTML = "<div style='color: var(--gold); font-size:1.2rem;'>Wedding completed. Thank you for your warm wishes!</div>";
-    }
-
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("days").innerText = days.toString().padStart(2, '0');
-      document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-      document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-      document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
-
-      if (distance < 0) {
-        clearInterval(countdownFunction);
-        activatePostWeddingState();
-      }
-    }, 1000);
-
-    if (new Date().getTime() > countdownDate) {
-      clearInterval(countdownFunction);
-      activatePostWeddingState();
-    }
-
-    function openRSVPModal() {
-      document.getElementById('rsvpModal').style.display = 'flex';
-    }
-    function closeRSVPModal() {
-      document.getElementById('rsvpModal').style.display = 'none';
-    }
-    document.getElementById('rsvpModal').addEventListener('click', function (event) {
-      if (event.target === this) {
-        closeRSVPModal();
-      }
-    });
-  </script>
-
+  <!-- Profile Modal -->
   <div id="profileModal" class="modal modal-profile">
     <div class="modal-content">
       <span class="close-btn" onclick="closeProfileModal()">&times;</span>
-      <h2 id="profileTitle" style="color: var(--gold); margin-bottom:20px;">Social Profiles</h2>
+      <h2 id="profileTitle" style="color:var(--gold);margin-bottom:20px;">Social Profiles</h2>
       <div class="social-icons">
-        <a id="linkedinLink" target="_blank"><img
-            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"></a>
-        <a id="facebookLink" target="_blank"><img
-            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"></a>
-        <a id="instagramLink" target="_blank"><img
-            src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"></a>
+        <a id="linkedinLink" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"></a>
+        <a id="facebookLink" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"></a>
+        <a id="instagramLink" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"></a>
       </div>
     </div>
   </div>
 
   <script>
+    /* ─── COUNTDOWN — fixed to IST (UTC+5:30) ─── */
+    /* Sept 13 2026 06:00 IST = Sept 13 2026 00:30 UTC */
+    const countdownDate = Date.UTC(2026, 8, 13, 0, 30, 0); // month is 0-indexed
 
-    function openLocation(location) {
-      //https://maps.app.goo.gl/ZD1x91pqNtaJ134T7
-      if (location === 'location') {
-        window.open('https://maps.app.goo.gl/ZD1x91pqNtaJ134T7', '_blank');
-      }
-
+    function activatePostWeddingState() {
+      const rsvpBlock = document.getElementById('teRsvpBlock');
+      const postMsg   = document.getElementById('postEventMessage');
+      if (rsvpBlock) rsvpBlock.style.display = 'none';
+      if (postMsg)   postMsg.style.display = 'block';
+      document.getElementById('countdown').innerHTML =
+        "<div style='color:var(--gold);font-size:1.2rem;'>Wedding completed. Thank you for your warm wishes!</div>";
     }
 
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = countdownDate - now;
+      if (distance <= 0) { activatePostWeddingState(); return; }
+      document.getElementById('days').innerText    = String(Math.floor(distance / 86400000)).padStart(2,'0');
+      document.getElementById('hours').innerText   = String(Math.floor((distance % 86400000) / 3600000)).padStart(2,'0');
+      document.getElementById('minutes').innerText = String(Math.floor((distance % 3600000) / 60000)).padStart(2,'0');
+      document.getElementById('seconds').innerText = String(Math.floor((distance % 60000) / 1000)).padStart(2,'0');
+    }
+    updateCountdown();
+    if (Date.now() < countdownDate) setInterval(updateCountdown, 1000);
+
+    /* ─── MODALS ─── */
+    function openRSVPModal()   { document.getElementById('rsvpModal').style.display = 'flex'; }
+    function closeRSVPModal()  { document.getElementById('rsvpModal').style.display = 'none'; }
+    document.getElementById('rsvpModal').addEventListener('click', e => { if(e.target===e.currentTarget) closeRSVPModal(); });
+
+    function openLocation(l) { if(l==='location') window.open('https://maps.app.goo.gl/ZD1x91pqNtaJ134T7','_blank'); }
 
     function openProfileModal(person) {
-      const linkedin = document.getElementById('linkedinLink');
-      const facebook = document.getElementById('facebookLink');
-      const instagram = document.getElementById('instagramLink');
-      const title = document.getElementById('profileTitle');
+      const li = document.getElementById('linkedinLink');
+      const fb = document.getElementById('facebookLink');
+      const ig = document.getElementById('instagramLink');
+      const ti = document.getElementById('profileTitle');
       if (person === 'gokul') {
-        title.innerText = "Gokul's Social Profiles";
-        linkedin.href = 'https://www.linkedin.com/in/gokul-raghu';
-        facebook.style.display = 'flex';
-        facebook.href = 'https://www.facebook.com/jokul.gokul';
-        instagram.href = 'https://www.instagram.com/gokuljokul/';
+        ti.innerText = "Gokul's Social Profiles";
+        li.href = 'https://www.linkedin.com/in/gokul-raghu';
+        fb.style.display = 'flex'; fb.href = 'https://www.facebook.com/jokul.gokul';
+        ig.href = 'https://www.instagram.com/gokuljokul/';
       } else {
-        title.innerText = "Sharumathi's Social Profiles";
-        linkedin.href = 'https://www.linkedin.com/in/sharumathigobi';
-        facebook.style.display = 'none';
-        instagram.href = 'https://www.instagram.com/sharu_0010';
+        ti.innerText = "Sharumathi's Social Profiles";
+        li.href = 'https://www.linkedin.com/in/sharumathigobi';
+        fb.style.display = 'none';
+        ig.href = 'https://www.instagram.com/sharu_0010';
       }
       document.getElementById('profileModal').style.display = 'flex';
     }
     function closeProfileModal() { document.getElementById('profileModal').style.display = 'none'; }
-    document.getElementById('profileModal').addEventListener('click', function (event) {
-      if (event.target === this) {
-        closeProfileModal();
-      }
-    });
-  </script>
-  <script>
-    const petals = ["🌸", "🌺", "🌼", "💮", "🌷"];
+    document.getElementById('profileModal').addEventListener('click', e => { if(e.target===e.currentTarget) closeProfileModal(); });
 
+    /* ─── PETALS ─── */
+    const petals = ["🌸","🌺","🌼","💮","🌷"];
     function createPetal() {
-      const petal = document.createElement("div");
-      petal.className = "petal";
-      petal.innerHTML = petals[Math.floor(Math.random() * petals.length)];
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.innerHTML = petals[Math.floor(Math.random() * petals.length)];
+      p.style.left = Math.random() * window.innerWidth + 'px';
+      p.style.fontSize = (18 + Math.random() * 20) + 'px';
+      p.style.animationDuration = (6 + Math.random() * 6) + 's';
+      document.body.appendChild(p);
+      p.addEventListener('animationend', () => p.remove());
+    }
+    setInterval(createPetal, 500);
 
-      petal.style.left = Math.random() * window.innerWidth + "px";
-      petal.style.fontSize = (18 + Math.random() * 20) + "px";
-      petal.style.animationDuration = (6 + Math.random() * 6) + "s";
+    /* ─── TRAVEL EXPLORER ─── */
+    const TE_STOPS = [
+      {name:"Sankarankovil",dist:"—",time:"Start",icon:"💒",desc:"Wedding venue. Narpavi Arangam hosts the auspicious Muhurtham at 06:00 AM.",tag:"Wedding"},
+      {name:"Tenkasi",dist:"43 km",time:"1 hr 5 min",icon:"🏘",desc:"District HQ. Good hotels, restaurants & transport hub for all westward routes.",tag:"Hub"},
+      {name:"Courtallam",dist:"50 km",time:"1 hr 20 min",icon:"🌊",desc:"Famous waterfall town — Main Falls, Five Falls, Shenbaga Devi Falls & Tiger Falls nearby.",tag:"Waterfall"},
+      {name:"Five Falls (Courtallam)",dist:"55 km",time:"1 hr 30 min",icon:"💦",desc:"Most photographed of Courtallam's falls. Wide cascades ideal for family bathing.",tag:"Waterfall"},
+      {name:"Panpoli Temple",dist:"58 km",time:"1 hr 25 min",icon:"🛕",desc:"Ancient Vaishnavite shrine on the banks of the Chittar river. Serene & spiritual.",tag:"Temple"},
+      {name:"Sengottai",dist:"68 km",time:"1 hr 45 min",icon:"🏙",desc:"Gateway to Kerala via Shencottah Ghat. Market town with clock tower & Murugan temple.",tag:"Town"},
+      {name:"Gundar Dam",dist:"72 km",time:"1 hr 55 min",icon:"🏞",desc:"Scenic reservoir with picturesque hill backdrop. Popular picnic spot at sunset.",tag:"Nature"},
+      {name:"Kottavasal",dist:"86 km",time:"2 hr 15 min",icon:"🌿",desc:"Forest-edge village. Entry point to deeper eco-trails and wildlife zones.",tag:"Forest"},
+      {name:"Rajathottam",dist:"104 km",time:"2 hr 40 min",icon:"🐘",desc:"Elephant corridor near KMTR. Tribal villages and nature walks available.",tag:"Wildlife"},
+      {name:"Thenmala",dist:"116 km",time:"3 hr",icon:"🌴",desc:"India's first planned eco-tourism destination. Shenduruney sanctuary, butterfly safari & hanging bridge.",tag:"Kerala"},
+      {name:"Alangulam",dist:"30 km",time:"45 min",icon:"🏘",desc:"Town on the Tenkasi–Tirunelveli highway. Local bazaars and Arulmigu Mariamman temple.",tag:"Town"},
+      {name:"Ambasamudram",dist:"65 km",time:"1 hr 40 min",icon:"⛰",desc:"Gateway to Western Ghats corridor. Nearest large town to Papanasam & KMTR.",tag:"Gateway"},
+      {name:"Papanasam Dam",dist:"80 km",time:"2 hr 5 min",icon:"🌊",desc:"Tamiraparani dam. Agasthiyar Falls and Agasthiyar temple nearby.",tag:"Dam"},
+      {name:"KMTR Reserve",dist:"90 km",time:"2 hr 20 min",icon:"🐆",desc:"Kalakkad–Mundanthurai Tiger Reserve. UNESCO Biosphere — tiger, leopard, elephant & 260+ bird species.",tag:"Wildlife"},
+      {name:"Tirunelveli",dist:"55 km",time:"1 hr 25 min",icon:"🏛",desc:"Historic city famed for Tirunelveli halwa, Nellaiappar Temple & shopping.",tag:"City"},
+    ];
 
-      document.body.appendChild(petal);
+    const teWxCodes = {0:'Clear ☀',1:'Mostly clear',2:'Partly cloudy ⛅',3:'Cloudy ☁',51:'Light drizzle 🌧',61:'Rain 🌧',63:'Rain 🌧',80:'Showers 🌦',95:'Thunderstorm ⛈'};
 
-      petal.addEventListener("animationend", () => {
-        petal.remove();
-      });
+    function teTab(id) {
+      const names = ['map','dest','weather'];
+      document.querySelectorAll('.te-tab').forEach((t,i) => t.classList.toggle('active', names[i]===id));
+      document.querySelectorAll('.te-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('te-'+id).classList.add('active');
     }
 
-    // Create petals continuously
-    setInterval(createPetal, 500);
+    function teBuildDestGrid() {
+      document.getElementById('teDestGrid').innerHTML = TE_STOPS.map((s,i) =>
+        `<div class="te-dest-card onclick="teToggleDest(${i})">
+          <div class="te-dest-badge">${s.tag}</div>
+          <div class="te-dest-icon">${s.icon}</div>
+          <div class="te-dest-name">${s.name}</div>
+          <div class="te-dest-dist">${s.dist} · ${s.time}</div>
+          <div class="te-dest-desc">${s.desc}</div>
+        </div>`).join('');
+    }
+
+    function teSelectStop(idx) {
+      const s = TE_STOPS[idx];
+      document.getElementById('teTicker').innerHTML =
+        `<strong>${s.icon} ${s.name}</strong> · ${s.dist} from Sankarankovil · ${s.time} drive<br>` +
+        `<span style="font-size:.82rem;color:#f0d9b5">${s.desc}</span>`;
+    }
+
+    async function teFetchWeather() {
+      try {
+        const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude=8.9598&longitude=77.3152&current=temperature_2m,weather_code,wind_speed_10m&timezone=Asia%2FKolkata');
+        const d = await r.json();
+        const c = d.current;
+        const cond = teWxCodes[c.weather_code] || '—';
+        const temp = Math.round(c.temperature_2m) + '°C';
+        const wind = Math.round(c.wind_speed_10m) + ' km/h';
+        const time = new Date(c.time).toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
+        ['teWxCond','teWxCondBig'].forEach(id => { const el=document.getElementById(id); if(el) el.innerText=cond; });
+        ['teWxTemp','teWxTempBig'].forEach(id => { const el=document.getElementById(id); if(el) el.innerText=temp; });
+        ['teWxWind','teWxWindBig'].forEach(id => { const el=document.getElementById(id); if(el) el.innerText=wind; });
+        ['teWxTime','teWxTimeBig'].forEach(id => { const el=document.getElementById(id); if(el) el.innerText=time; });
+      } catch (e) {
+    [
+      "teWxCond",
+      "teWxCondBig"
+    ].forEach(id => document.getElementById(id).innerText = "Offline");
+
+    [
+      "teWxTemp",
+      "teWxTempBig",
+      "teWxWind",
+      "teWxWindBig",
+      "teWxTime",
+      "teWxTimeBig"
+    ].forEach(id => document.getElementById(id).innerText = "--");
+
+    console.error(e);
+}
+    }
+
+    /* Car animation */
+    (function teAnimateCar() {
+      const car = document.getElementById('teCarEl');
+      const svg = document.getElementById('teMapSvg');
+      const pts = [
+        [220,60],[220,130],[220,200],[270,200],[320,200],[355,175],[390,145],
+        [355,175],[320,200],[320,240],[320,280],[270,305],[220,330],[295,330],
+        [370,330],[370,390],[370,450],[440,450],[510,450],[510,490],[510,530]
+      ];
+      let t = 0;
+      function step() {
+        const svgR = svg.getBoundingClientRect();
+        const vb = svg.viewBox.baseVal;
+        const sx = svgR.width / vb.width;
+        const sy = svgR.height / vb.height;
+        const idx = Math.floor(t);
+        const frac = t - idx;
+        const p1 = pts[Math.min(idx, pts.length-1)];
+        const p2 = pts[Math.min(idx+1, pts.length-1)];
+        const x = p1[0] + (p2[0]-p1[0]) * frac;
+        const y = p1[1] + (p2[1]-p1[1]) * frac;
+        const parentR = svg.parentElement.getBoundingClientRect();
+        car.style.left = (svgR.left - parentR.left + x * sx) + 'px';
+        car.style.top  = (svgR.top  - parentR.top  + y * sy) + 'px';
+        t += 0.015;
+        if (t >= pts.length - 1) t = 0;
+        requestAnimationFrame(step);
+      }
+      step();
+    })();
+
+    /* Music */
+    const teAudio = document.getElementById('teAudio');
+    document.getElementById('teMusicBtn').addEventListener('click', async function() {
+      try {
+        if (teAudio.paused) {
+          await teAudio.play();
+          this.textContent = '⏸ Pause';
+          document.getElementById('teMusicStatus').innerText = 'Playing music.';
+        } else {
+          teAudio.pause();
+          this.textContent = '▶ Play';
+          document.getElementById('teMusicStatus').innerText = 'Music paused.';
+        }
+      } catch(e) {
+        document.getElementById('teMusicStatus').innerText = 'Add music/nadaswaram.mp3 to enable playback.';
+      }
+    });
+    document.getElementById('teMusicVol').addEventListener('input', function() {
+      teAudio.volume = Number(this.value);
+    });
+
+    /* Init */
+    teBuildDestGrid();
+    teFetchWeather();
+    setInterval(teFetchWeather, 300000);
   </script>
 </body>
-
 </html>
