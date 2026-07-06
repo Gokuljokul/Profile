@@ -534,23 +534,232 @@
     setInterval(createPetal, 500);
 
     /* ─── TRAVEL EXPLORER ─── */
-    const TE_STOPS = [
-      {name:"Sankarankovil",dist:"—",time:"Start",icon:"💒",desc:"Wedding venue. Narpavi Arangam hosts the auspicious Muhurtham at 06:00 AM.",tag:"Wedding"},
-      {name:"Tenkasi",dist:"43 km",time:"1 hr 5 min",icon:"🏘",desc:"District HQ. Good hotels, restaurants & transport hub for all westward routes.",tag:"Hub"},
-      {name:"Courtallam",dist:"50 km",time:"1 hr 20 min",icon:"🌊",desc:"Famous waterfall town — Main Falls, Five Falls, Shenbaga Devi Falls & Tiger Falls nearby.",tag:"Waterfall"},
-      {name:"Five Falls (Courtallam)",dist:"55 km",time:"1 hr 30 min",icon:"💦",desc:"Most photographed of Courtallam's falls. Wide cascades ideal for family bathing.",tag:"Waterfall"},
-      {name:"Panpoli Temple",dist:"58 km",time:"1 hr 25 min",icon:"🛕",desc:"Ancient Vaishnavite shrine on the banks of the Chittar river. Serene & spiritual.",tag:"Temple"},
-      {name:"Sengottai",dist:"68 km",time:"1 hr 45 min",icon:"🏙",desc:"Gateway to Kerala via Shencottah Ghat. Market town with clock tower & Murugan temple.",tag:"Town"},
-      {name:"Gundar Dam",dist:"72 km",time:"1 hr 55 min",icon:"🏞",desc:"Scenic reservoir with picturesque hill backdrop. Popular picnic spot at sunset.",tag:"Nature"},
-      {name:"Kottavasal",dist:"86 km",time:"2 hr 15 min",icon:"🌿",desc:"Forest-edge village. Entry point to deeper eco-trails and wildlife zones.",tag:"Forest"},
-      {name:"Rajathottam",dist:"104 km",time:"2 hr 40 min",icon:"🐘",desc:"Elephant corridor near KMTR. Tribal villages and nature walks available.",tag:"Wildlife"},
-      {name:"Thenmala",dist:"116 km",time:"3 hr",icon:"🌴",desc:"India's first planned eco-tourism destination. Shenduruney sanctuary, butterfly safari & hanging bridge.",tag:"Kerala"},
-      {name:"Alangulam",dist:"30 km",time:"45 min",icon:"🏘",desc:"Town on the Tenkasi–Tirunelveli highway. Local bazaars and Arulmigu Mariamman temple.",tag:"Town"},
-      {name:"Ambasamudram",dist:"65 km",time:"1 hr 40 min",icon:"⛰",desc:"Gateway to Western Ghats corridor. Nearest large town to Papanasam & KMTR.",tag:"Gateway"},
-      {name:"Papanasam Dam",dist:"80 km",time:"2 hr 5 min",icon:"🌊",desc:"Tamiraparani dam. Agasthiyar Falls and Agasthiyar temple nearby.",tag:"Dam"},
-      {name:"KMTR Reserve",dist:"90 km",time:"2 hr 20 min",icon:"🐆",desc:"Kalakkad–Mundanthurai Tiger Reserve. UNESCO Biosphere — tiger, leopard, elephant & 260+ bird species.",tag:"Wildlife"},
-      {name:"Tirunelveli",dist:"55 km",time:"1 hr 25 min",icon:"🏛",desc:"Historic city famed for Tirunelveli halwa, Nellaiappar Temple & shopping.",tag:"City"},
-    ];
+const TE_STOPS = [
+  {
+    name:"💒 Narpavi Arangam",
+    dist:"0 km",
+    time:"Wedding Venue",
+    icon:"💒",
+    desc:"Wedding venue at Karivalam Vandanalur, Sankarankovil.",
+    tag:"Wedding"
+  },
+  {
+    name:"Karivalam Vandanalur",
+    dist:"2 km",
+    time:"5 min",
+    icon:"🏡",
+    desc:"Traditional village surrounding the wedding hall with ancient temples.",
+    tag:"Village"
+  },
+  {
+    name:"Sankarankovil",
+    dist:"5 km",
+    time:"10 min",
+    icon:"🛕",
+    desc:"Sri Sankaranarayanar Temple, Gomathi Amman Temple and famous Aadi Thapasu festival.",
+    tag:"Temple"
+  },
+  {
+    name:"Alangulam",
+    dist:"30 km",
+    time:"40 min",
+    icon:"🏘",
+    desc:"Small town with local markets and temples.",
+    tag:"Town"
+  },
+  {
+    name:"Tenkasi",
+    dist:"43 km",
+    time:"1 hr",
+    icon:"🏙",
+    desc:"Gateway to the Western Ghats, shopping and restaurants.",
+    tag:"City"
+  },
+  {
+    name:"Courtallam",
+    dist:"50 km",
+    time:"1 hr 10 min",
+    icon:"🌊",
+    desc:"The Spa of South India with famous waterfalls.",
+    tag:"Waterfall"
+  },
+  {
+    name:"Courtallam Five Falls",
+    dist:"55 km",
+    time:"1 hr 20 min",
+    icon:"💦",
+    desc:"Most visited waterfall in Courtallam.",
+    tag:"Nature"
+  },
+  {
+    name:"Rajapalayam",
+    dist:"60 km",
+    time:"1 hr 10 min",
+    icon:"🏞",
+    desc:"Ayyanar Falls and gateway to the Western Ghats.",
+    tag:"Nature"
+  },
+  {
+    name:"Ambasamudram",
+    dist:"68 km",
+    time:"1 hr 35 min",
+    icon:"🌿",
+    desc:"Beautiful heritage town near the Tamirabarani River.",
+    tag:"Heritage"
+  },
+  {
+    name:"Shencottah",
+    dist:"68 km",
+    time:"1 hr 40 min",
+    icon:"🌄",
+    desc:"Gateway to Kerala via Aryankavu Pass.",
+    tag:"Gateway"
+  },
+  {
+    name:"Sivakasi",
+    dist:"72 km",
+    time:"1 hr 20 min",
+    icon:"🎆",
+    desc:"Fireworks capital of India.",
+    tag:"City"
+  },
+  {
+    name:"Srivilliputhur",
+    dist:"75 km",
+    time:"1 hr 30 min",
+    icon:"🛕",
+    desc:"Famous Andal Temple and Tamil Nadu State Emblem tower.",
+    tag:"Temple"
+  },
+  {
+    name:"Papanasam",
+    dist:"82 km",
+    time:"2 hrs",
+    icon:"🏞",
+    desc:"Papanasam Temple, Dam and Agasthiyar Falls.",
+    tag:"Nature"
+  },
+  {
+    name:"Agasthiyar Falls",
+    dist:"85 km",
+    time:"2 hrs",
+    icon:"💧",
+    desc:"Beautiful waterfall inside the Western Ghats.",
+    tag:"Nature"
+  },
+  {
+    name:"Manimuthar Dam",
+    dist:"90 km",
+    time:"2 hr 10 min",
+    icon:"🌳",
+    desc:"Scenic reservoir surrounded by forests.",
+    tag:"Nature"
+  },
+  {
+    name:"Kalakkad Mundanthurai Tiger Reserve",
+    dist:"95 km",
+    time:"2 hr 20 min",
+    icon:"🐘",
+    desc:"UNESCO Biosphere Reserve rich in wildlife.",
+    tag:"Wildlife"
+  },
+  {
+    name:"Aryankavu",
+    dist:"95 km",
+    time:"2 hr 15 min",
+    icon:"🛕",
+    desc:"Famous Lord Ayyappa Temple on the Kerala border.",
+    tag:"Temple"
+  },
+  {
+    name:"Thenmala",
+    dist:"115 km",
+    time:"2 hr 45 min",
+    icon:"🌴",
+    desc:"India's first planned Eco-tourism destination.",
+    tag:"Kerala"
+  },
+  {
+    name:"Tiruchendur Murugan Temple",
+    dist:"120 km",
+    time:"2 hr 30 min",
+    icon:"🛕",
+    desc:"One of the Six Abodes of Lord Murugan overlooking the Bay of Bengal.",
+    tag:"Pilgrimage"
+  },
+  {
+    name:"Our Lady of Snows Basilica, Thoothukudi",
+    dist:"132 km",
+    time:"2 hr 40 min",
+    icon:"⛪",
+    desc:"Historic Basilica dedicated to Our Lady of Snows.",
+    tag:"Church"
+  },
+  {
+    name:"Thoothukudi",
+    dist:"135 km",
+    time:"2 hr 45 min",
+    icon:"🏖",
+    desc:"Port city with beaches, churches and seafood.",
+    tag:"Beach"
+  },
+  {
+    name:"Madurai",
+    dist:"155 km",
+    time:"3 hrs",
+    icon:"🏛",
+    desc:"Meenakshi Amman Temple, Thirumalai Nayakkar Palace and famous cuisine.",
+    tag:"Heritage"
+  },
+  {
+    name:"Kanyakumari",
+    dist:"165 km",
+    time:"3 hr 15 min",
+    icon:"🌅",
+    desc:"Vivekananda Rock Memorial, Thiruvalluvar Statue and spectacular sunrise.",
+    tag:"Tourism"
+  },
+  {
+    name:"Suchindram Temple",
+    dist:"170 km",
+    time:"3 hr 20 min",
+    icon:"🛕",
+    desc:"Thanumalayan Temple with musical pillars.",
+    tag:"Temple"
+  },
+  {
+    name:"Padmanabhapuram Palace",
+    dist:"175 km",
+    time:"3 hr 30 min",
+    icon:"🏯",
+    desc:"Magnificent wooden palace of the Travancore Kingdom.",
+    tag:"Heritage"
+  },
+  {
+    name:"Rameswaram",
+    dist:"198 km",
+    time:"4 hrs",
+    icon:"🌉",
+    desc:"Ramanathaswamy Temple, Pamban Bridge and Agni Theertham.",
+    tag:"Pilgrimage"
+  },
+  {
+    name:"Dhanushkodi",
+    dist:"218 km",
+    time:"4 hr 30 min",
+    icon:"🌊",
+    desc:"Ghost town where the Bay of Bengal meets the Indian Ocean.",
+    tag:"Scenic"
+  },
+  {
+    name:"Chennai",
+    dist:"610 km",
+    time:"10 hrs",
+    icon:"🚆",
+    desc:"Guests from Chennai can travel by train, bus or flight via Madurai or Thoothukudi.",
+    tag:"Travel"
+  }
+];
 
     const teWxCodes = {0:'Clear ☀',1:'Mostly clear',2:'Partly cloudy ⛅',3:'Cloudy ☁',51:'Light drizzle 🌧',61:'Rain 🌧',63:'Rain 🌧',80:'Showers 🌦',95:'Thunderstorm ⛈'};
 
