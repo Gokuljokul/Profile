@@ -12,7 +12,7 @@
     rel="stylesheet">
   <style>
     :root {
-      --maroon: #800020;
+      /* --maroon: #800020; */
       --gold: #D4AF37;
       --cream: #FFFDD0;
       --dark-gold: #AA7C11;
@@ -26,15 +26,15 @@
 
     body {
       font-family: 'Marcellus', serif;
-      background-color: var(--maroon);
-      color: var(--cream);
+      background-color: #fff8e8;
+      color: #2a1400;
       overflow-x: hidden;
       text-align: center;
     }
 
     .bg-hero {
       background:
-        linear-gradient(rgba(55, 0, 0, 0.78), rgba(25, 0, 0, 0.88)),
+        linear-gradient(rgba(255, 248, 220, 0.80), rgba(255, 244, 208, 0.86)),
         url("https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=1800&q=80");
       background-size: cover;
       background-position: center;
@@ -52,9 +52,9 @@
       width: 100%;
       border: 4px double var(--gold);
       padding: 40px 20px;
-      background: rgba(128, 0, 32, 0.6);
+      background: rgba(255, 253, 240, 0.93);
       border-radius: 20px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 30px rgba(100, 60, 0, 0.25);
       backdrop-filter: blur(5px);
       position: relative;
       animation: fadeIn 2s ease-in-out;
@@ -85,14 +85,14 @@
 
     h2 {
       font-size: 2.2rem;
-      color: #fff;
+      color: #2a1400;
       letter-spacing: 2px;
       margin: 10px 0;
     }
 
     .parents {
       font-size: 1rem;
-      color: #f0e6d2;
+      color: #5a3214;
       font-style: italic;
       margin-bottom: 15px;
     }
@@ -109,7 +109,7 @@
       border-bottom: 1px solid var(--gold);
       padding: 20px 0;
       margin: 30px 0;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(180, 130, 50, 0.10);
     }
 
     .date,
@@ -123,13 +123,13 @@
 
     .venue {
       font-size: 1.4rem;
-      color: #fff;
+      color: #2a1400;
       margin-top: 10px;
     }
 
     .location-sub {
       font-size: 1rem;
-      color: #ddd;
+      color: #5a3214;
       margin-top: 5px;
     }
 
@@ -158,7 +158,7 @@
     .time-label {
       font-size: 0.75rem;
       text-transform: uppercase;
-      color: #fff;
+      color: #5a3214;
     }
 
     .btn-group {
@@ -172,11 +172,11 @@
     .post-event-message {
       display: none;
       margin-top: 16px;
-      border: 1px solid rgba(212, 175, 55, 0.65);
-      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(180, 130, 40, 0.55);
+      background: rgba(255, 250, 230, 0.92);
       border-radius: 12px;
       padding: 14px;
-      color: #ffe8c5;
+      color: #2a1400;
       animation: fadeIn 0.8s ease;
     }
 
@@ -192,11 +192,11 @@
       margin-top: 10px;
       padding: 9px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 229, 170, 0.9);
-      color: #fff6de;
+      border: 1px solid rgba(160, 110, 20, 0.75);
+      color: #2a1400;
       text-decoration: none;
       font-weight: 700;
-      background: rgba(212, 175, 55, 0.22);
+      background: rgba(212, 175, 55, 0.25);
       animation: albumPulse 1.8s ease-in-out infinite;
     }
 
@@ -220,7 +220,7 @@
 
     .btn {
       background: linear-gradient(135deg, var(--gold), var(--dark-gold));
-      color: var(--maroon);
+      color: #5a0014;
       border: none;
       padding: 12px 30px;
       font-size: 1rem;
@@ -259,16 +259,16 @@
     }
 
     .modal-content {
-      background: var(--maroon);
+      background: #fff9ee;
       border: 3px solid var(--gold);
       border-radius: 15px;
       width: 92%;
       max-width: 560px;
       height: auto;
       padding: 20px;
-      color: var(--cream);
+      color: #2a1400;
       position: relative;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
     }
 
     .modal-rsvp .modal-content {
@@ -331,7 +331,7 @@
     }
 
     .profile-btn:hover {
-      color: #fff;
+      color: var(--dark-gold);
       transform: scale(1.05);
     }
 
@@ -354,8 +354,8 @@
 
     .clickable-btn:hover,
     .clickable-btn:focus-visible {
-      border-bottom-color: #fff;
-      text-shadow: 0 0 9px rgba(255, 223, 158, 0.8);
+      border-bottom-color: var(--dark-gold);
+      text-shadow: 0 0 9px rgba(180, 120, 0, 0.6);
       outline: none;
     }
 
@@ -382,7 +382,6 @@
       display: inline-block;
       line-height: 1;
       margin-right: 1px;
-      color: #ffe2a0;
       font-weight: 700;
     }
 
@@ -415,7 +414,6 @@
       display: inline-block;
       line-height: 1;
       margin-right: 1px;
-      color: #ffe2a0;
       font-weight: 700;
     }
 
@@ -448,7 +446,6 @@
       display: inline-block;
       line-height: 1;
       margin-right: 1px;
-      color: #ffe2a0;
       font-weight: 700;
     }
 
@@ -481,7 +478,6 @@
       display: inline-block;
       line-height: 1;
       margin-right: 1px;
-      color: #ffe2a0;
       font-weight: 700;
     }
 
@@ -572,17 +568,17 @@
       padding: 0;
       border: 2px solid var(--gold);
       border-radius: 18px;
-      background: rgba(34, 0, 12, 0.7);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+      background: rgba(255, 248, 225, 0.95);
+      box-shadow: 0 15px 30px rgba(100, 60, 0, 0.20);
       overflow: hidden;
     }
 
     /* inner explorer styles */
     .te-wrap {
-      background: linear-gradient(160deg, #5a0014, #3a000c 60%, #6a0018);
+      background: linear-gradient(160deg, #fffaee, #fff8e8 60%, #fff9ec);
       padding: 28px 16px 36px;
       font-family: 'Marcellus', serif;
-      color: #fff5e6;
+      color: #2a1400;
     }
 
     .te-title {
@@ -596,7 +592,7 @@
 
     .te-sub {
       text-align: center;
-      color: #f0d9b5;
+      color: #6a3a1a;
       font-size: 0.9rem;
       margin-bottom: 22px;
       font-style: italic;
@@ -611,9 +607,9 @@
     }
 
     .te-tab {
-      background: rgba(212, 175, 55, 0.12);
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      color: #f0d9b5;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(180, 130, 30, 0.5);
+      color: #5a3214;
       padding: 8px 16px;
       border-radius: 20px;
       cursor: pointer;
@@ -679,7 +675,7 @@
       justify-content: center;
       margin-top: 12px;
       font-size: .82rem;
-      color: #f0d9b5;
+      color: #6a3a1a;
     }
 
     .te-leg-item {
@@ -696,12 +692,12 @@
 
     .te-ticker {
       background: rgba(212, 175, 55, 0.12);
-      border: 1px solid rgba(212, 175, 55, 0.4);
+      border: 1px solid rgba(180, 130, 30, 0.45);
       border-radius: 10px;
       padding: 10px 14px;
       margin-top: 12px;
       font-size: .88rem;
-      color: #ffe8c5;
+      color: #2a1400;
       min-height: 38px;
       transition: all .3s;
     }
@@ -717,8 +713,8 @@
     }
 
     .te-dest-card {
-      background: rgba(128, 0, 32, 0.5);
-      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(255, 248, 228, 0.88);
+      border: 1px solid rgba(180, 130, 30, 0.45);
       border-radius: 14px;
       padding: 14px;
       cursor: pointer;
@@ -729,13 +725,13 @@
 
     .te-dest-card:hover {
       border-color: var(--gold);
-      background: rgba(128, 0, 32, 0.75);
+      background: rgba(255, 243, 210, 0.97);
       transform: translateY(-2px);
     }
 
     .te-dest-card.te-selected {
       border-color: var(--gold);
-      background: rgba(180, 0, 40, 0.6);
+      background: rgba(255, 238, 195, 0.97);
       box-shadow: 0 0 0 2px rgba(212, 175, 55, .3);
     }
 
@@ -753,13 +749,13 @@
 
     .te-dest-dist {
       font-size: .82rem;
-      color: #f0d9b5;
+      color: #6a3a1a;
       margin-bottom: 6px;
     }
 
     .te-dest-desc {
       font-size: .83rem;
-      color: #ddd;
+      color: #5a3214;
       line-height: 1.45;
     }
 
@@ -776,8 +772,8 @@
     }
 
     .te-wx-box {
-      background: rgba(34, 0, 12, .6);
-      border: 1px solid rgba(212, 175, 55, .4);
+      background: rgba(255, 248, 225, 0.85);
+      border: 1px solid rgba(180, 130, 30, 0.4);
       border-radius: 14px;
       padding: 16px;
       margin-bottom: 18px;
@@ -804,7 +800,7 @@
 
     .te-wx-label {
       font-size: .75rem;
-      color: #f0d9b5;
+      color: #6a3a1a;
       margin-top: 2px;
     }
 
@@ -817,7 +813,7 @@
     .te-scroll-hint {
       text-align: center;
       font-size: .78rem;
-      color: #f0d9b5;
+      color: #8a6040;
       font-style: italic;
       margin-top: 8px;
     }
@@ -831,10 +827,10 @@
     }
 
     .te-info-card {
-      border: 1px solid rgba(212, 175, 55, 0.5);
+      border: 1px solid rgba(180, 130, 30, 0.5);
       border-radius: 12px;
       padding: 16px;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 250, 235, 0.88);
       text-align: left;
     }
 
@@ -857,7 +853,7 @@
       border-radius: 30px;
       padding: 10px 18px;
       background: linear-gradient(135deg, var(--gold), var(--dark-gold));
-      color: var(--maroon);
+      color: #5a0014;
       font-weight: bold;
       cursor: pointer;
       font-family: 'Marcellus', serif;
@@ -870,7 +866,7 @@
 
     .te-music-status {
       font-size: 0.85rem;
-      color: #ead9c7;
+      color: #6a3a1a;
       margin-top: 8px;
       min-height: 16px;
     }
@@ -896,7 +892,7 @@
     <div class="container">
       <div class="garland">💐🍃🌼🍃💐</div>
       <div class="shubh">|| WEDDING INVITATION ||</div>
-      <p style="margin-top:20px;font-style:italic;color:#ddd;">
+      <p style="margin-top:20px;font-style:italic;color:#5a3214;">
         We cordially invite you and your family to celebrate the auspicious occasion of the marriage of
       </p>
 
@@ -952,7 +948,7 @@
           <div class="te-info-row">
             <div class="te-info-card">
               <h3>Live Weather — Tenkasi</h3>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:.9rem;color:#f4e6d5;">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:.9rem;color:#5a3214;">
                 <div>Condition: <span id="teWxCond" style="color:var(--gold)">Loading…</span></div>
                 <div>Temp: <span id="teWxTemp" style="color:var(--gold)">--</span></div>
                 <div>Wind: <span id="teWxWind" style="color:var(--gold)">--</span></div>
@@ -1356,7 +1352,7 @@
               style="background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:16px;">
               <div style="color:var(--gold);margin-bottom:10px;font-size:.95rem;">September 13, 2026 — Wedding Day
                 Forecast</div>
-              <div style="font-size:.88rem;color:#f0d9b5;line-height:1.7;">
+              <div style="font-size:.88rem;color:#5a3214;line-height:1.7;">
                 🌤 Tenkasi receives <strong>South-West Monsoon</strong> from June–September. Wedding day mornings
                 (06:00–08:00 AM) are typically <strong>cool and partly cloudy</strong> — ideal for outdoor mandapam
                 ceremonies.<br><br>
@@ -1398,7 +1394,7 @@
         loading="lazy"></iframe>
     </div>
   </div>
-      <p style="margin:10px;font-style:italic;color:#ddd;">
+      <p style="margin:10px;font-style:italic;color:#2a1400;">
       Designed by Gokul's Vibe coding
     </p>
 
@@ -1582,7 +1578,7 @@
       const s = TE_STOPS[idx];
       document.getElementById('teTicker').innerHTML =
         `<strong>${s.icon} ${s.name}</strong> · ${s.dist} from Sankarankovil · ${s.time} drive<br>` +
-        `<span style="font-size:.82rem;color:#f0d9b5">${s.desc}</span>`;
+        `<span style="font-size:.82rem;color:#5a3214">${s.desc}</span>`;
     }
 
     async function teFetchWeather() {
